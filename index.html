@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="EE Stock LLC supplies containers, equipment, modular assets, facility support products, and operational materials for public-sector and commercial requirements."
+    content="EE Stock LLC supplies containers, equipment, modular assets, facility support products, and operational materials for public-sector and commercial requirements. Experience supporting DLA, U.S. Navy, and public-sector customers."
   />
 
   <style>
@@ -181,14 +181,14 @@
     }
 
     .hero {
-      min-height: 92vh;
+      min-height: 94vh;
       display: flex;
       align-items: center;
-      padding: 140px 24px 90px;
+      padding: 140px 24px 84px;
     }
 
     .hero-inner {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
       text-align: center;
     }
@@ -203,24 +203,47 @@
     }
 
     .hero h1 {
-      font-size: clamp(3.05rem, 8vw, 6.9rem);
-      line-height: 0.94;
+      font-size: clamp(3.2rem, 8.4vw, 7.3rem);
+      line-height: 0.92;
       margin: 0;
       color: var(--navy);
-      letter-spacing: -0.065em;
+      letter-spacing: -0.07em;
       font-weight: 800;
     }
 
     .hero-copy {
-      max-width: 760px;
+      max-width: 820px;
       margin: 30px auto 0;
-      font-size: clamp(1.05rem, 2vw, 1.34rem);
-      line-height: 1.72;
+      font-size: clamp(1.12rem, 2.15vw, 1.48rem);
+      line-height: 1.58;
       color: #38576a;
     }
 
+    .proof-row {
+      margin: 34px auto 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .proof-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(16, 43, 60, 0.12);
+      color: var(--navy);
+      font-weight: 800;
+      box-shadow: 0 14px 34px rgba(16, 43, 60, 0.07);
+      backdrop-filter: blur(8px);
+      font-size: 0.92rem;
+    }
+
     .hero-actions {
-      margin-top: 36px;
+      margin-top: 34px;
       display: flex;
       justify-content: center;
       gap: 14px;
@@ -255,7 +278,7 @@
     }
 
     section {
-      padding: 88px 24px;
+      padding: 84px 24px;
     }
 
     .container {
@@ -264,8 +287,8 @@
     }
 
     .section-heading {
-      max-width: 800px;
-      margin-bottom: 38px;
+      max-width: 820px;
+      margin-bottom: 36px;
     }
 
     .section-kicker {
@@ -280,16 +303,16 @@
     h2 {
       margin: 0;
       color: var(--navy);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.15rem, 4.4vw, 3.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.052em;
     }
 
     .section-intro {
       margin-top: 18px;
       color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.75;
+      font-size: 1.08rem;
+      line-height: 1.64;
     }
 
     .cards {
@@ -305,7 +328,7 @@
       padding: 30px;
       box-shadow: 0 18px 48px rgba(16, 43, 60, 0.08);
       backdrop-filter: blur(10px);
-      min-height: 250px;
+      min-height: 235px;
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
@@ -330,21 +353,74 @@
     .card h3 {
       margin: 0 0 14px;
       color: var(--navy);
-      font-size: 1.18rem;
+      font-size: 1.22rem;
     }
 
     .card p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.62;
       font-size: 0.98rem;
+    }
+
+    .banner {
+      margin-top: 24px;
+      padding: 26px;
+      border-radius: 28px;
+      background: rgba(16, 43, 60, 0.94);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      inset: -80%;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 72px 72px;
+      animation: gridDrift 34s linear infinite;
+      opacity: 0.42;
+    }
+
+    .banner > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner strong {
+      display: block;
+      font-size: clamp(1.28rem, 2.4vw, 2rem);
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .banner span {
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.55;
+    }
+
+    .banner-tag {
+      white-space: nowrap;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 800;
     }
 
     .capability-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
     .capability {
@@ -376,7 +452,7 @@
 
     .capability span {
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.55;
       font-size: 0.95rem;
     }
 
@@ -398,7 +474,7 @@
 
     .panel p {
       color: var(--muted);
-      line-height: 1.78;
+      line-height: 1.68;
       margin: 18px 0 0;
     }
 
@@ -419,13 +495,13 @@
     .stat strong {
       display: block;
       color: var(--navy);
-      font-size: 1.1rem;
+      font-size: 1.12rem;
       margin-bottom: 6px;
     }
 
     .stat span {
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     .contact-box {
@@ -466,7 +542,7 @@
       color: rgba(255, 255, 255, 0.78);
       max-width: 700px;
       margin: 18px auto 0;
-      line-height: 1.7;
+      line-height: 1.62;
     }
 
     .contact-details {
@@ -500,13 +576,14 @@
       }
 
       .hero {
-        min-height: 86vh;
+        min-height: 88vh;
         padding-top: 120px;
       }
 
       .cards,
       .capability-list,
-      .split {
+      .split,
+      .banner {
         grid-template-columns: 1fr;
       }
 
@@ -516,6 +593,11 @@
 
       .panel {
         padding: 30px;
+      }
+
+      .banner-tag {
+        white-space: normal;
+        width: fit-content;
       }
     }
 
@@ -530,15 +612,23 @@
       }
 
       section {
-        padding: 68px 18px;
+        padding: 64px 18px;
       }
 
       .hero h1 {
-        font-size: clamp(2.7rem, 15vw, 4.5rem);
+        font-size: clamp(2.7rem, 15vw, 4.7rem);
       }
 
       .hero-copy {
-        font-size: 1rem;
+        font-size: 1.02rem;
+      }
+
+      .proof-row {
+        justify-content: center;
+      }
+
+      .proof-pill {
+        width: 100%;
       }
 
       .button-primary,
@@ -576,15 +666,22 @@
       <div class="hero-inner">
         <p class="eyebrow">EE Stock LLC</p>
 
-        <h1>Operational Supply & Delivery.</h1>
+        <h1>Operational Supply. Solid Delivery.</h1>
 
         <p class="hero-copy">
-          Containers, equipment, modular assets, facility support products, and operational materials for public-sector and commercial requirements.
+          Containers, equipment, modular assets, and mission-support products for government and commercial requirements.
         </p>
+
+        <div class="proof-row">
+          <span class="proof-pill">DLA Experience</span>
+          <span class="proof-pill">U.S. Navy Support</span>
+          <span class="proof-pill">Public-Sector Ready</span>
+          <span class="proof-pill">CAGE: 951A3</span>
+        </div>
 
         <div class="hero-actions">
           <a href="#capabilities" class="button-primary">View Capabilities</a>
-          <a href="#contact" class="button-secondary">Contact</a>
+          <a href="#contact" class="button-secondary">Contact EE Stock</a>
         </div>
       </div>
     </section>
@@ -594,10 +691,10 @@
         <div class="section-heading">
           <p class="section-kicker">Capabilities</p>
 
-          <h2>Supply support for field, facility, and operational requirements.</h2>
+          <h2>Built for practical supply requirements.</h2>
 
           <p class="section-intro">
-            EE Stock LLC provides practical supply and delivery support for agencies, municipalities, facilities, and commercial operations that require dependable products, clear communication, and professional execution.
+            EE Stock LLC supplies operational products and support assets for agencies, facilities, field operations, and commercial customers that need clear communication and dependable fulfillment.
           </p>
         </div>
 
@@ -605,32 +702,43 @@
           <div class="card">
             <div class="card-number">01</div>
 
-            <h3>Container & Storage Solutions</h3>
+            <h3>Containers & Storage</h3>
 
             <p>
-              Shipping containers, storage containers, specialty containers, and related site-support assets for operational and facility needs.
+              Shipping containers, storage containers, specialty containers, and site-support assets for operational use.
             </p>
           </div>
 
           <div class="card">
             <div class="card-number">02</div>
 
-            <h3>Equipment & Modular Assets</h3>
+            <h3>Equipment & Modular</h3>
 
             <p>
-              Equipment, modular structures, mobile office solutions, rental assets, and support products for worksites and active operations.
+              Equipment, modular structures, mobile offices, rental assets, and support products for worksites and facilities.
             </p>
           </div>
 
           <div class="card">
             <div class="card-number">03</div>
 
-            <h3>Operational Products</h3>
+            <h3>Mission-Support Products</h3>
 
             <p>
-              Facility support products, specialty items, field-use materials, and commercial supply requirements with delivery-focused fulfillment.
+              Facility support products, field-use materials, specialty items, and commercial supply requirements.
             </p>
           </div>
+        </div>
+
+        <div class="banner">
+          <div>
+            <strong>Experience supporting DLA, U.S. Navy, and public-sector requirements.</strong>
+            <span>
+              EE Stock LLC brings a focused, execution-minded approach to supply, delivery, and order support.
+            </span>
+          </div>
+
+          <div class="banner-tag">Small Business Supplier</div>
         </div>
 
         <div class="capability-list">
@@ -666,7 +774,7 @@
 
             <div>
               <strong>Delivery Coordination</strong>
-              <span>Clear lead times, destination planning, freight awareness, and communication through completion.</span>
+              <span>Lead times, destination planning, freight awareness, and clean communication through completion.</span>
             </div>
           </div>
         </div>
@@ -679,10 +787,10 @@
           <div class="panel">
             <p class="section-kicker">Operations</p>
 
-            <h2>Clean communication. Solid execution.</h2>
+            <h2>Supply. Coordinate. Deliver.</h2>
 
             <p>
-              EE Stock LLC focuses on the details that matter: the requirement, the product, the destination, and the timeline. From containers and equipment to modular and facility-related assets, the goal is simple — provide what is needed, keep communication clean, and execute without unnecessary noise.
+              EE Stock LLC keeps the focus on the product, destination, and timeline. From containers and equipment to modular and facility-related assets, the goal is simple: provide what is needed, communicate clearly, and execute.
             </p>
           </div>
 
@@ -698,13 +806,13 @@
             </div>
 
             <div class="stat">
-              <strong>Public-Sector Ready</strong>
-              <span>Support for government purchasing needs with a professional, documentation-aware approach.</span>
+              <strong>Government-Ready</strong>
+              <span>Experience supporting DLA, U.S. Navy, and public-sector purchasing requirements.</span>
             </div>
 
             <div class="stat">
               <strong>Responsive</strong>
-              <span>Clear communication and practical follow-through from request to delivery.</span>
+              <span>Direct communication and practical follow-through from request to delivery.</span>
             </div>
           </div>
         </div>
