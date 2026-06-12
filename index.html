@@ -5,28 +5,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>EE Stock LLC | Government Supply & Equipment Support</title>
+  <title>EE Stock LLC | Government Supply & Procurement Support</title>
 
   <meta
     name="description"
-    content="EE Stock LLC is a small business supplier supporting government, public-sector, contractor, and commercial requirements with storage containers, mobile offices, equipment, trailers, specialty procurement, and delivery-focused support."
+    content="EE Stock LLC is a small business supplier supporting government, public-sector, contractor, and commercial requirements with supply, procurement, equipment, logistics, and project support."
   />
 
   <style>
     :root {
-      --navy: #061625;
-      --navy-2: #0d263a;
-      --navy-3: #153a55;
-      --blue: #2f6f95;
-      --blue-light: #78b7d9;
-      --steel: #d8e6ee;
-      --ice: #f4f9fc;
+      --black: #05080d;
+      --navy: #071522;
+      --navy-2: #0d2538;
+      --steel: #9fb5c3;
+      --silver: #d9e4ea;
+      --ice: #f5f8fa;
       --white: #ffffff;
-      --text: #233b4b;
-      --muted: #607886;
-      --line: rgba(10, 37, 56, 0.13);
-      --shadow: 0 24px 70px rgba(6, 22, 37, 0.16);
-      --radius: 28px;
+      --gold: #c8a96a;
+      --blue: #4f93bc;
+      --muted: rgba(255, 255, 255, 0.68);
+      --dark-muted: #607482;
+      --line: rgba(255, 255, 255, 0.14);
+      --dark-line: rgba(7, 21, 34, 0.12);
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
     }
 
     * {
@@ -40,8 +41,8 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--ice);
+      color: var(--white);
+      background: var(--black);
       overflow-x: hidden;
     }
 
@@ -49,65 +50,47 @@
       color: inherit;
     }
 
-    .topbar {
-      background: var(--navy);
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.82rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .topbar-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 9px 24px;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .topbar strong {
-      color: #ffffff;
-    }
-
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 50;
-      background: rgba(6, 22, 37, 0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 8, 13, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 17px 24px;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 22px;
+      gap: 24px;
     }
 
     .brand {
       color: var(--white);
       text-decoration: none;
       font-weight: 900;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
+      font-size: 0.92rem;
       white-space: nowrap;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 23px;
+      gap: 24px;
     }
 
     nav a {
+      color: rgba(255, 255, 255, 0.68);
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 800;
       transition: color 0.2s ease;
     }
@@ -119,31 +102,44 @@
     .nav-cta {
       color: var(--white);
       padding: 10px 16px;
+      border: 1px solid rgba(200, 169, 106, 0.44);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(200, 169, 106, 0.08);
     }
 
     .hero {
-      position: relative;
-      min-height: 94vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 116px 24px 86px;
-      background:
-        linear-gradient(90deg, rgba(6, 22, 37, 0.97) 0%, rgba(6, 22, 37, 0.88) 38%, rgba(6, 22, 37, 0.56) 72%, rgba(6, 22, 37, 0.54) 100%),
-        linear-gradient(180deg, rgba(6, 22, 37, 0.24), rgba(6, 22, 37, 0.82)),
-        url("background.png") center center / cover no-repeat;
+      position: relative;
       overflow: hidden;
+      padding: 138px 24px 92px;
+      background:
+        linear-gradient(90deg, rgba(5, 8, 13, 0.98) 0%, rgba(7, 21, 34, 0.92) 38%, rgba(7, 21, 34, 0.56) 72%, rgba(5, 8, 13, 0.62) 100%),
+        linear-gradient(180deg, rgba(5, 8, 13, 0.12), rgba(5, 8, 13, 0.88)),
+        url("background.png") center center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(79, 147, 188, 0.24), transparent 30%),
+        radial-gradient(circle at 78% 18%, rgba(200, 169, 106, 0.12), transparent 26%),
+        linear-gradient(120deg, rgba(255,255,255,0.055), transparent 38%);
+      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 20% 22%, rgba(120, 183, 217, 0.24), transparent 32%),
-        linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 42%);
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 86px 86px;
+      mask-image: linear-gradient(90deg, rgba(0,0,0,0.35), transparent 65%);
       pointer-events: none;
     }
 
@@ -155,34 +151,34 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.08fr 0.92fr;
-      gap: 46px;
+      gap: 48px;
       align-items: center;
     }
 
     .eyebrow {
-      margin: 0 0 18px;
-      color: rgba(255, 255, 255, 0.72);
+      margin: 0 0 20px;
+      color: var(--gold);
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 900;
     }
 
     h1 {
       margin: 0;
+      max-width: 820px;
       color: var(--white);
-      font-size: clamp(3.2rem, 6.4vw, 6.85rem);
-      line-height: 0.91;
-      letter-spacing: -0.075em;
+      font-size: clamp(3.4rem, 6.8vw, 7.15rem);
+      line-height: 0.89;
+      letter-spacing: -0.078em;
       font-weight: 900;
-      max-width: 850px;
     }
 
     .hero-copy {
-      max-width: 760px;
-      margin: 28px 0 0;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: clamp(1.1rem, 1.8vw, 1.32rem);
+      max-width: 690px;
+      margin: 30px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: clamp(1.08rem, 1.85vw, 1.28rem);
       line-height: 1.58;
     }
 
@@ -210,16 +206,16 @@
     }
 
     .button-primary {
+      color: var(--black);
       background: var(--white);
-      color: var(--navy);
-      box-shadow: 0 20px 46px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
     }
 
     .button-secondary {
       color: var(--white);
-      background: rgba(255, 255, 255, 0.09);
       border: 1px solid rgba(255, 255, 255, 0.24);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
     }
 
     .button-primary:hover,
@@ -227,90 +223,88 @@
       transform: translateY(-2px);
     }
 
-    .proof-row {
-      margin-top: 32px;
+    .proof {
+      margin-top: 34px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    .proof-pill {
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+    .proof span {
+      padding: 11px 15px;
       border-radius: 999px;
-      padding: 11px 16px;
-      font-weight: 900;
-      font-size: 0.9rem;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 34px;
-      padding: 30px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-card h2 {
-      margin: 0 0 20px;
       color: var(--white);
-      font-size: 1.42rem;
-      line-height: 1.22;
-      letter-spacing: -0.035em;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      font-size: 0.88rem;
+      font-weight: 900;
     }
 
-    .hero-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .profile-card {
+      padding: 32px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .profile-card h2 {
+      color: var(--white);
+      font-size: 1.55rem;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      margin: 0 0 22px;
+    }
+
+    .profile-grid {
       display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
 
-    .hero-list li {
-      display: flex;
-      gap: 12px;
-      color: rgba(255, 255, 255, 0.76);
-      line-height: 1.48;
-      font-size: 0.98rem;
+    .profile-item {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .check {
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      border-radius: 50%;
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .profile-item small {
+      display: block;
+      color: rgba(255, 255, 255, 0.48);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.66rem;
       font-weight: 900;
-      font-size: 0.78rem;
-      margin-top: 1px;
+      margin-bottom: 8px;
+    }
+
+    .profile-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.98rem;
+      line-height: 1.35;
     }
 
     .identity {
-      background: var(--navy);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: #05080d;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .identity-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 22px 24px;
+      padding: 20px 24px;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
     .identity-item {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.62);
       font-size: 0.9rem;
       line-height: 1.35;
     }
@@ -326,21 +320,15 @@
       padding: 92px 24px;
     }
 
-    .section-light {
-      background:
-        radial-gradient(circle at 12% 10%, rgba(120, 183, 217, 0.14), transparent 30%),
-        linear-gradient(180deg, #f7fbff 0%, #edf6fb 100%);
-    }
-
-    .section-white {
-      background: var(--white);
-    }
-
     .section-dark {
       background:
-        radial-gradient(circle at 82% 8%, rgba(120, 183, 217, 0.15), transparent 28%),
-        linear-gradient(135deg, #061625 0%, #0d263a 100%);
-      color: var(--white);
+        radial-gradient(circle at 82% 10%, rgba(79, 147, 188, 0.14), transparent 28%),
+        linear-gradient(135deg, #05080d 0%, #071522 100%);
+    }
+
+    .section-light {
+      background: var(--ice);
+      color: var(--navy);
     }
 
     .container {
@@ -349,107 +337,123 @@
     }
 
     .section-heading {
-      max-width: 880px;
-      margin-bottom: 40px;
+      max-width: 850px;
+      margin-bottom: 38px;
     }
 
     .section-kicker {
       margin: 0 0 14px;
-      color: var(--blue);
+      color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.21em;
-      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      font-size: 0.76rem;
       font-weight: 900;
-    }
-
-    .section-dark .section-kicker {
-      color: rgba(255, 255, 255, 0.62);
     }
 
     h2 {
       margin: 0;
-      color: var(--navy);
-      font-size: clamp(2.15rem, 4.25vw, 3.65rem);
+      color: inherit;
+      font-size: clamp(2.2rem, 4.4vw, 3.75rem);
       line-height: 1.02;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.058em;
       font-weight: 900;
-    }
-
-    .section-dark h2 {
-      color: var(--white);
     }
 
     .section-intro {
       margin: 18px 0 0;
-      color: var(--muted);
+      color: var(--dark-muted);
       font-size: 1.08rem;
-      line-height: 1.66;
+      line-height: 1.62;
+      max-width: 760px;
     }
 
     .section-dark .section-intro {
-      color: rgba(255, 255, 255, 0.72);
+      color: rgba(255, 255, 255, 0.68);
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
     .card {
-      min-height: 250px;
+      min-height: 220px;
       padding: 30px;
-      border-radius: var(--radius);
+      border-radius: 28px;
       background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--line);
-      box-shadow: 0 18px 50px rgba(6, 22, 37, 0.08);
-      backdrop-filter: blur(10px);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      border: 1px solid var(--dark-line);
+      box-shadow: 0 18px 45px rgba(7, 21, 34, 0.08);
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 62px rgba(6, 22, 37, 0.12);
+    .section-dark .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+      box-shadow: none;
     }
 
     .card-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #eaf4fb;
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--gold);
       font-weight: 900;
-      margin-bottom: 24px;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      margin-bottom: 22px;
+      text-transform: uppercase;
     }
 
     .card h3 {
-      margin: 0 0 14px;
-      color: var(--navy);
-      font-size: 1.24rem;
-      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      color: inherit;
+      font-size: 1.26rem;
+      letter-spacing: -0.03em;
     }
 
     .card p {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.64;
+      color: var(--dark-muted);
+      line-height: 1.6;
       font-size: 0.98rem;
     }
 
-    .dark-card {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.14);
+    .section-dark .card p {
+      color: rgba(255, 255, 255, 0.66);
     }
 
-    .dark-card h3 {
+    .statement {
+      margin-top: 28px;
+      padding: 32px;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(5, 8, 13, 0.97), rgba(13, 37, 56, 0.96)),
+        radial-gradient(circle at 82% 16%, rgba(200,169,106,0.18), transparent 26%);
       color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
     }
 
-    .dark-card p {
-      color: rgba(255, 255, 255, 0.72);
+    .statement strong {
+      display: block;
+      font-size: clamp(1.25rem, 2.3vw, 1.95rem);
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .statement span {
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.55;
+    }
+
+    .tag {
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 12px 18px;
+      color: var(--white);
+      border: 1px solid rgba(200, 169, 106, 0.38);
+      background: rgba(200, 169, 106, 0.08);
+      font-weight: 900;
     }
 
     .split {
@@ -461,211 +465,82 @@
 
     .panel {
       padding: 38px;
-      border-radius: 36px;
+      border-radius: 34px;
       background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
+      border: 1px solid var(--dark-line);
+      box-shadow: 0 24px 70px rgba(7, 21, 34, 0.12);
     }
 
     .panel p {
-      color: var(--muted);
-      line-height: 1.68;
+      color: var(--dark-muted);
+      line-height: 1.65;
       margin: 18px 0 0;
     }
 
-    .stats {
+    .proof-stack {
       display: grid;
       gap: 14px;
     }
 
-    .stat {
-      padding: 22px 24px;
+    .proof-card {
+      padding: 23px 24px;
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(8px);
+      background: #ffffff;
+      border: 1px solid var(--dark-line);
+      box-shadow: 0 14px 36px rgba(7, 21, 34, 0.06);
     }
 
-    .stat strong {
-      display: block;
-      color: var(--navy);
-      font-size: 1.12rem;
-      margin-bottom: 6px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      line-height: 1.52;
-    }
-
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 34px;
-    }
-
-    .capability {
-      padding: 24px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.76);
-      border: 1px solid var(--line);
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      box-shadow: 0 16px 42px rgba(6, 22, 37, 0.06);
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      min-width: 10px;
-      border-radius: 50%;
-      background: var(--blue);
-      margin-top: 7px;
-      box-shadow: 0 0 0 6px rgba(47, 111, 149, 0.1);
-    }
-
-    .capability strong {
+    .proof-card strong {
       display: block;
       color: var(--navy);
       margin-bottom: 6px;
+      font-size: 1.1rem;
     }
 
-    .capability span {
-      color: var(--muted);
-      line-height: 1.56;
-      font-size: 0.96rem;
-    }
-
-    .statement {
-      margin-top: 30px;
-      padding: 32px;
-      border-radius: 32px;
-      background:
-        linear-gradient(135deg, rgba(6, 22, 37, 0.97), rgba(21, 58, 85, 0.96)),
-        radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.18), transparent 28%);
-      color: var(--white);
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .statement strong {
+    .proof-card span {
       display: block;
-      font-size: clamp(1.34rem, 2.4vw, 2rem);
-      letter-spacing: -0.035em;
-      margin-bottom: 8px;
-    }
-
-    .statement span {
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.56;
-    }
-
-    .tag {
-      white-space: nowrap;
-      padding: 12px 18px;
-      border-radius: 999px;
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-weight: 900;
-    }
-
-    .execution-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .execution-main {
-      padding: 42px;
-      border-radius: 36px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
-    }
-
-    .execution-main h2 {
-      max-width: 700px;
-    }
-
-    .execution-main p {
-      color: rgba(255, 255, 255, 0.74);
-      line-height: 1.68;
-      font-size: 1.08rem;
-      margin: 20px 0 0;
-      max-width: 760px;
-    }
-
-    .execution-points {
-      display: grid;
-      gap: 14px;
-    }
-
-    .execution-point {
-      padding: 22px 24px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .execution-point strong {
-      display: block;
-      color: var(--white);
-      font-size: 1.08rem;
-      margin-bottom: 7px;
-    }
-
-    .execution-point span {
-      color: rgba(255, 255, 255, 0.68);
+      color: var(--dark-muted);
       line-height: 1.52;
     }
 
-    .buyer-grid {
+    .capability-line {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 16px;
       margin-top: 34px;
     }
 
-    .buyer-card {
-      padding: 24px;
-      border-radius: 26px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+    .capability-line div {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
     }
 
-    .buyer-card strong {
+    .capability-line strong {
       display: block;
       color: var(--white);
-      margin-bottom: 10px;
-      font-size: 1.04rem;
+      margin-bottom: 8px;
+      font-size: 1.02rem;
     }
 
-    .buyer-card span {
-      display: block;
-      color: rgba(255, 255, 255, 0.68);
-      line-height: 1.55;
+    .capability-line span {
+      color: rgba(255,255,255,0.64);
+      line-height: 1.52;
       font-size: 0.94rem;
     }
 
     .contact-box {
-      position: relative;
-      overflow: hidden;
       text-align: center;
       padding: 66px 34px;
-      border-radius: 40px;
+      border-radius: 38px;
       color: var(--white);
       background:
-        linear-gradient(135deg, rgba(6, 22, 37, 0.98), rgba(21, 58, 85, 0.96)),
-        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.18), transparent 28%);
+        linear-gradient(135deg, rgba(5, 8, 13, 0.98), rgba(13, 37, 56, 0.96)),
+        radial-gradient(circle at 82% 18%, rgba(200,169,106,0.18), transparent 28%);
       box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
     }
 
     .contact-box::before {
@@ -673,9 +548,9 @@
       position: absolute;
       inset: -70%;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-      background-size: 74px 74px;
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 80px 80px;
       transform: rotate(8deg);
       opacity: 0.32;
     }
@@ -685,15 +560,11 @@
       z-index: 1;
     }
 
-    .contact-box h2 {
-      color: var(--white);
-    }
-
     .contact-box p {
-      max-width: 760px;
+      max-width: 680px;
       margin: 18px auto 0;
-      color: rgba(255, 255, 255, 0.78);
-      line-height: 1.64;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
     }
 
     .contact-details {
@@ -701,7 +572,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
     }
 
     .contact-pill {
@@ -709,51 +580,44 @@
       text-decoration: none;
       padding: 12px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
       font-weight: 800;
     }
 
     footer {
       padding: 34px 24px;
       text-align: center;
-      color: var(--muted);
+      color: rgba(255,255,255,0.48);
       font-size: 0.9rem;
-      background: var(--white);
-      border-top: 1px solid var(--line);
+      background: #05080d;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    @media (max-width: 1020px) {
+    @media (max-width: 980px) {
       .hero-inner,
-      .split,
-      .execution-grid {
+      .split {
         grid-template-columns: 1fr;
       }
 
       .identity-inner,
-      .buyer-grid {
+      .capability-line {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-card {
+        max-width: 720px;
       }
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 820px) {
       nav {
         display: none;
       }
 
-      .hero {
-        min-height: auto;
-        padding-top: 92px;
-      }
-
       .cards,
-      .capability-grid,
       .statement {
         grid-template-columns: 1fr;
-      }
-
-      .card {
-        min-height: auto;
       }
 
       .tag {
@@ -763,28 +627,25 @@
     }
 
     @media (max-width: 560px) {
-      .topbar-inner {
-        padding: 8px 18px;
-      }
-
       .nav {
         padding: 16px 18px;
       }
 
       .brand {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
       }
 
       .hero {
-        padding: 92px 18px 72px;
+        padding: 118px 18px 76px;
+        min-height: auto;
         background:
-          linear-gradient(90deg, rgba(6, 22, 37, 0.98) 0%, rgba(6, 22, 37, 0.9) 60%, rgba(6, 22, 37, 0.76) 100%),
-          linear-gradient(180deg, rgba(6, 22, 37, 0.24), rgba(6, 22, 37, 0.82)),
+          linear-gradient(90deg, rgba(5, 8, 13, 0.98) 0%, rgba(7, 21, 34, 0.92) 58%, rgba(5, 8, 13, 0.76) 100%),
+          linear-gradient(180deg, rgba(5, 8, 13, 0.12), rgba(5, 8, 13, 0.88)),
           url("background.png") center center / cover no-repeat;
       }
 
       h1 {
-        font-size: clamp(2.72rem, 15vw, 4.55rem);
+        font-size: clamp(2.75rem, 15vw, 4.55rem);
       }
 
       .hero-copy {
@@ -792,26 +653,24 @@
       }
 
       .button-primary,
-      .button-secondary {
+      .button-secondary,
+      .proof span {
         width: 100%;
       }
 
-      .proof-pill {
-        width: 100%;
+      .profile-grid,
+      .identity-inner,
+      .capability-line {
+        grid-template-columns: 1fr;
       }
 
       section {
         padding: 66px 18px;
       }
 
-      .identity-inner,
-      .buyer-grid {
-        grid-template-columns: 1fr;
-      }
-
       .panel,
-      .execution-main {
-        padding: 30px;
+      .profile-card {
+        padding: 28px;
       }
 
       .contact-box {
@@ -823,13 +682,6 @@
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <span><strong>EE Stock LLC</strong> | Small Business Supplier</span>
-      <span>CAGE: <strong>951A3</strong> | Moreno Valley, California</span>
-    </div>
-  </div>
-
   <header>
     <div class="nav">
       <a href="#" class="brand">EE Stock LLC</a>
@@ -837,8 +689,7 @@
       <nav>
         <a href="#capabilities">Capabilities</a>
         <a href="#experience">Experience</a>
-        <a href="#execution">Execution</a>
-        <a href="#buyers">Buyers</a>
+        <a href="#standards">Standards</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
@@ -848,12 +699,12 @@
     <section class="hero">
       <div class="hero-inner">
         <div>
-          <p class="eyebrow">Government Supply • Equipment • Field Support</p>
+          <p class="eyebrow">Government Supply • Procurement • Logistics Support</p>
 
-          <h1>Supply support built for real requirements.</h1>
+          <h1>Built to support the mission.</h1>
 
           <p class="hero-copy">
-            <strong>EE Stock LLC</strong> supports government, public-sector, contractor, and commercial customers with containers, mobile offices, equipment, trailers, specialty procurement, and delivery-focused support.
+            <strong>EE Stock LLC</strong> is a small business supplier supporting government, public-sector, contractor, and commercial requirements with responsive procurement, logistics, and project support.
           </p>
 
           <div class="hero-actions">
@@ -861,38 +712,38 @@
             <a href="mailto:vavalos@eestockllc.com" class="button-secondary">Contact EE Stock</a>
           </div>
 
-          <div class="proof-row">
-            <span class="proof-pill">DLA Experience</span>
-            <span class="proof-pill">U.S. Navy Support</span>
-            <span class="proof-pill">Public-Sector Ready</span>
-            <span class="proof-pill">CAGE 951A3</span>
+          <div class="proof">
+            <span>DLA Experience</span>
+            <span>U.S. Navy Support</span>
+            <span>Public-Sector Ready</span>
+            <span>CAGE 951A3</span>
           </div>
         </div>
 
-        <aside class="hero-card">
-          <h2>A responsive small business supplier for equipment, storage, and mission-support requirements.</h2>
+        <aside class="profile-card">
+          <h2>Lean. Responsive. Execution-focused.</h2>
 
-          <ul class="hero-list">
-            <li>
-              <span class="check">✓</span>
-              <span>Storage containers, shipping containers, specialty containers, and field storage assets.</span>
-            </li>
+          <div class="profile-grid">
+            <div class="profile-item">
+              <small>Company</small>
+              <strong>EE Stock LLC</strong>
+            </div>
 
-            <li>
-              <span class="check">✓</span>
-              <span>Mobile offices, modular support, trailers, heavy equipment, and related project assets.</span>
-            </li>
+            <div class="profile-item">
+              <small>CAGE</small>
+              <strong>951A3</strong>
+            </div>
 
-            <li>
-              <span class="check">✓</span>
-              <span>Specialty procurement and smaller buys where speed, communication, and follow-through matter.</span>
-            </li>
+            <div class="profile-item">
+              <small>Business</small>
+              <strong>Small Business</strong>
+            </div>
 
-            <li>
-              <span class="check">✓</span>
-              <span>Experience supporting DLA, U.S. Navy, and public-sector requirements.</span>
-            </li>
-          </ul>
+            <div class="profile-item">
+              <small>Location</small>
+              <strong>Moreno Valley, CA</strong>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
@@ -900,28 +751,23 @@
     <div class="identity">
       <div class="identity-inner">
         <div class="identity-item">
-          <strong>Company</strong>
-          EE Stock LLC
+          <strong>DLA Experience</strong>
+          Federal supply support
         </div>
 
         <div class="identity-item">
-          <strong>CAGE Code</strong>
-          951A3
+          <strong>U.S. Navy Support</strong>
+          Active requirement support
         </div>
 
         <div class="identity-item">
-          <strong>Business Type</strong>
-          Small Business
+          <strong>Small Business</strong>
+          Responsive execution
         </div>
 
         <div class="identity-item">
-          <strong>Primary Support</strong>
-          Supply & Equipment
-        </div>
-
-        <div class="identity-item">
-          <strong>Location</strong>
-          Moreno Valley, CA
+          <strong>Public-Sector Ready</strong>
+          Government buyer awareness
         </div>
       </div>
     </div>
@@ -931,10 +777,10 @@
         <div class="section-heading">
           <p class="section-kicker">Capabilities</p>
 
-          <h2>Practical supply capability for government and contractor needs.</h2>
+          <h2>Broad supply support without unnecessary complexity.</h2>
 
           <p class="section-intro">
-            EE Stock LLC supports defined requirements with a direct focus on product, timing, destination, communication, and completion. The company is built for buyers who need a responsive supplier that can support field, facility, jobsite, and operational needs.
+            EE Stock LLC supports defined requirements across equipment, materials, field assets, specialty procurement, logistics coordination, and project-based supply needs.
           </p>
         </div>
 
@@ -942,228 +788,156 @@
           <div class="card">
             <div class="card-number">01</div>
 
-            <h3>Containers & Storage Assets</h3>
+            <h3>Supply & Procurement</h3>
 
             <p>
-              Storage containers, shipping containers, specialty containers, container accessories, and field storage support for government, contractor, and facility requirements.
+              Responsive support for defined government, contractor, and commercial purchasing requirements.
             </p>
           </div>
 
           <div class="card">
             <div class="card-number">02</div>
 
-            <h3>Mobile Offices & Modular Support</h3>
+            <h3>Equipment & Field Assets</h3>
 
             <p>
-              Mobile office and modular support for temporary facilities, field offices, jobsites, agency locations, and contractor operations.
+              Practical support for operational, facility, jobsite, storage, and mission-related needs.
             </p>
           </div>
 
           <div class="card">
             <div class="card-number">03</div>
 
-            <h3>Equipment, Trailers & Support Assets</h3>
+            <h3>Logistics & Coordination</h3>
 
             <p>
-              Heavy equipment, support equipment, trailers, material needs, site assets, and specialty purchasing support for active requirements.
+              Delivery-minded coordination focused on timing, destination, communication, and completion.
             </p>
-          </div>
-        </div>
-
-        <div class="capability-grid">
-          <div class="capability">
-            <div class="dot"></div>
-            <div>
-              <strong>Government & Public-Sector Orders</strong>
-              <span>Support for federal, state, municipal, institutional, and agency purchasing needs.</span>
-            </div>
-          </div>
-
-          <div class="capability">
-            <div class="dot"></div>
-            <div>
-              <strong>Contractor Support</strong>
-              <span>Supply and coordination support for contractors managing projects, sites, and customer requirements.</span>
-            </div>
-          </div>
-
-          <div class="capability">
-            <div class="dot"></div>
-            <div>
-              <strong>Specialty Procurement</strong>
-              <span>Focused purchasing support for defined items, smaller buys, and non-routine supply needs.</span>
-            </div>
-          </div>
-
-          <div class="capability">
-            <div class="dot"></div>
-            <div>
-              <strong>Delivery Coordination</strong>
-              <span>Support built around destination, lead time, schedule, communication, and completion.</span>
-            </div>
           </div>
         </div>
 
         <div class="statement">
           <div>
-            <strong>Small business responsiveness. Government-ready support.</strong>
+            <strong>A small business supplier with real public-sector experience.</strong>
             <span>
-              EE Stock LLC supports customers that need clear communication, practical supply capability, and dependable execution from request through delivery.
+              EE Stock LLC has supported DLA, U.S. Navy, and public-sector requirements with a practical, focused approach.
             </span>
           </div>
 
-          <div class="tag">DLA • U.S. Navy • Public Sector</div>
+          <div class="tag">CAGE 951A3</div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section-white">
+    <section id="experience" class="section-light" style="padding-top: 0;">
       <div class="container">
         <div class="split">
           <div class="panel">
             <p class="section-kicker">Experience</p>
 
-            <h2>Proven support for public-sector requirements.</h2>
+            <h2>Trusted where requirements need follow-through.</h2>
 
             <p>
-              EE Stock LLC has experience supporting DLA, U.S. Navy, and public-sector requirements. The company understands the importance of clear scope, reliable communication, delivery timing, and a professional response to buyer needs.
+              EE Stock LLC understands that buyers need more than interest. They need clear communication, practical capability, and a supplier that stays focused on the requirement.
             </p>
 
             <p>
-              Our focus is simple: understand the requirement, support the customer, and keep the work moving.
+              The company’s experience includes support for DLA, U.S. Navy, and public-sector requirements.
             </p>
           </div>
 
-          <div class="stats">
-            <div class="stat">
+          <div class="proof-stack">
+            <div class="proof-card">
               <strong>DLA Experience</strong>
-              <span>Experience supporting Defense Logistics Agency requirements involving government supply needs.</span>
+              <span>Federal supply support experience with defined government requirements.</span>
             </div>
 
-            <div class="stat">
+            <div class="proof-card">
               <strong>U.S. Navy Support</strong>
-              <span>Support experience connected to Navy requirements where communication and timing matter.</span>
+              <span>Support connected to active Navy requirements and operational needs.</span>
             </div>
 
-            <div class="stat">
-              <strong>Public-Sector Ready</strong>
-              <span>Familiarity with federal, state, municipal, and institutional purchasing environments.</span>
-            </div>
-
-            <div class="stat">
-              <strong>Commercial & Contractor Support</strong>
-              <span>Practical support for contractors and commercial teams that need equipment, materials, storage, or specialty items.</span>
+            <div class="proof-card">
+              <strong>Government Buyer Ready</strong>
+              <span>Professional response, clear scope awareness, and execution-focused communication.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="execution" class="section-dark">
-      <div class="container">
-        <div class="execution-grid">
-          <div class="execution-main">
-            <p class="section-kicker">Execution</p>
-
-            <h2>We support the requirement. We communicate. We deliver.</h2>
-
-            <p>
-              EE Stock LLC is built for buyers who need direct support, clear answers, and dependable follow-through. We focus on what matters: the item, the schedule, the destination, and the outcome.
-            </p>
-          </div>
-
-          <div class="execution-points">
-            <div class="execution-point">
-              <strong>Requirement-Focused</strong>
-              <span>Scope, quantity, delivery location, schedule, and end use drive the support path.</span>
-            </div>
-
-            <div class="execution-point">
-              <strong>Delivery-Minded</strong>
-              <span>We stay focused on timing, coordination, and completion.</span>
-            </div>
-
-            <div class="execution-point">
-              <strong>Buyer-Ready Communication</strong>
-              <span>Clear, responsive communication from request through closeout.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="buyer-grid" style="margin-top: 34px;">
-          <div class="buyer-card">
-            <strong>Containers</strong>
-            <span>Storage, shipping, specialty, field-use, and facility support needs.</span>
-          </div>
-
-          <div class="buyer-card">
-            <strong>Mobile Offices</strong>
-            <span>Temporary office and modular support for sites, agencies, and contractors.</span>
-          </div>
-
-          <div class="buyer-card">
-            <strong>Equipment</strong>
-            <span>Heavy equipment, support equipment, trailers, and related operational assets.</span>
-          </div>
-
-          <div class="buyer-card">
-            <strong>Specialty Buys</strong>
-            <span>Defined purchasing needs that require practical supplier coordination.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="buyers" class="section-light">
+    <section id="standards" class="section-dark">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">For Buyers</p>
+          <p class="section-kicker">Standards</p>
 
-          <h2>A capable supplier for defined requirements.</h2>
+          <h2>Simple standards. Serious execution.</h2>
 
           <p class="section-intro">
-            EE Stock LLC is positioned for buyers and project teams that need a small business supplier with practical capability, fast communication, and a serious approach to completion.
+            EE Stock LLC keeps the focus where it belongs: the requirement, the schedule, the buyer, and the outcome.
           </p>
         </div>
 
         <div class="cards">
           <div class="card">
-            <div class="card-number">A</div>
+            <div class="card-number">Standard 01</div>
 
-            <h3>Government Buyers</h3>
+            <h3>Clear Requirements</h3>
 
             <p>
-              Support for federal, state, municipal, and public-sector purchasing needs involving equipment, storage, field assets, and specialty supply.
+              Scope, quantity, destination, timing, and end use are treated as the foundation of every request.
             </p>
           </div>
 
           <div class="card">
-            <div class="card-number">B</div>
+            <div class="card-number">Standard 02</div>
 
-            <h3>Prime Contractors</h3>
+            <h3>Responsive Communication</h3>
 
             <p>
-              Supply and project support for contractors that need responsive communication, defined pricing, and delivery-minded coordination.
+              Direct communication and practical follow-through from request through completion.
             </p>
           </div>
 
           <div class="card">
-            <div class="card-number">C</div>
+            <div class="card-number">Standard 03</div>
 
-            <h3>Commercial Operations</h3>
+            <h3>Delivery Focus</h3>
 
             <p>
-              Practical support for companies, facilities, yards, and operating locations that need containers, equipment, materials, or specialty items.
+              The work stays centered on getting the right support to the right place at the right time.
             </p>
+          </div>
+        </div>
+
+        <div class="capability-line">
+          <div>
+            <strong>Government</strong>
+            <span>Federal, state, municipal, and public-sector requirements.</span>
+          </div>
+
+          <div>
+            <strong>Contractors</strong>
+            <span>Support for active projects, field needs, and defined scopes.</span>
+          </div>
+
+          <div>
+            <strong>Commercial</strong>
+            <span>Practical supply support for facilities and operations.</span>
+          </div>
+
+          <div>
+            <strong>Specialty Needs</strong>
+            <span>Focused procurement support for non-routine requirements.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section-white">
+    <section id="contact" class="section-light">
       <div class="container">
         <div class="contact-box">
-          <p class="section-kicker" style="color: rgba(255,255,255,0.72);">Contact</p>
+          <p class="section-kicker">Contact</p>
 
           <h2>EE Stock LLC</h2>
 
@@ -1188,3 +962,4 @@
 </body>
 </html>
 ```
+
