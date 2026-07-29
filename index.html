@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EE Stock LLC | Government Supply, Containers, Equipment & Contract Execution</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="EE Stock LLC is a California-based small business supporting federal, state, local, and commercial buyers with storage containers, modular support, commercial equipment, specialty procurement, logistics coordination, and contract execution." />
+  <title>EE Stock LLC | Government Supply &amp; Equipment</title>
+  <meta
+    name="description"
+    content="EE Stock LLC furnishes containers, modular space, equipment, and specialized industrial products for federal, state, and local government requirements."
+  >
+  <meta name="theme-color" content="#08101c">
 
   <style>
     :root {
-      --bg: #07111f;
-      --bg-dark: #030814;
-      --panel: rgba(255, 255, 255, 0.075);
-      --panel-strong: rgba(255, 255, 255, 0.12);
-      --line: rgba(255, 255, 255, 0.14);
-      --text: #f5f7fa;
-      --muted: #b8c2d1;
-      --soft: #dce5f2;
-      --accent: #7db7ff;
-      --accent-2: #b9d8ff;
-      --gold: #d6b56d;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
-      --radius: 22px;
-      --max: 1180px;
+      --navy: #08101c;
+      --navy-soft: #101b2a;
+      --navy-deep: #060d17;
+      --paper: #f2f0e9;
+      --paper-light: #faf9f5;
+      --white: #f3f5f7;
+      --muted: #aeb8c5;
+      --blue: #a8c4df;
+      --gold: #c8a965;
+      --dark-gold: #78612e;
+      --dark-text: #08101c;
+      --body-text: #53606d;
+      --dark-line: rgba(230, 236, 243, 0.17);
+      --light-line: rgba(8, 16, 28, 0.16);
+      --shell: 1180px;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 84px;
     }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 18% 15%, rgba(125, 183, 255, 0.22), transparent 32%),
-        radial-gradient(circle at 82% 4%, rgba(214, 181, 109, 0.16), transparent 28%),
-        linear-gradient(145deg, #07111f 0%, #030814 48%, #07111f 100%);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.35), transparent);
-      z-index: -1;
+      margin: 0;
+      background: var(--navy);
+      color: var(--white);
+      font-family:
+        Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Arial, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -64,838 +56,1151 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(100% - 36px, var(--max));
+    .shell {
+      width: min(calc(100% - 48px), var(--shell));
       margin: 0 auto;
     }
 
-    header {
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(3, 8, 20, 0.74);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--dark-line);
+      background: rgba(8, 16, 28, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .nav {
-      height: 76px;
+    .navigation {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 30px;
     }
 
-    .brand {
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .wordmark-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: var(--gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+    }
+
+    .wordmark small {
+      margin-left: 5px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .navigation nav {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-weight: 800;
+      gap: 27px;
+      color: var(--muted);
+      font-size: 0.81rem;
+      font-weight: 600;
+    }
+
+    .navigation nav a {
+      transition: color 180ms ease;
+    }
+
+    .navigation nav a:hover,
+    .navigation nav a:focus-visible {
+      color: #ffffff;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding-top: 112px;
+      background:
+        linear-gradient(rgba(168, 196, 223, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 196, 223, 0.05) 1px, transparent 1px),
+        radial-gradient(
+          circle at 78% 18%,
+          rgba(80, 117, 151, 0.20),
+          transparent 29%
+        ),
+        linear-gradient(145deg, #0b1625 0%, #08101c 58%, #0a1422 100%);
+      background-size: 56px 56px, 56px 56px, auto, auto;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -95px;
+      top: 84px;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(200, 169, 101, 0.16);
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.38fr) minmax(330px, 0.62fr);
+      gap: 74px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding-bottom: 84px;
+    }
+
+    .eyebrow,
+    .section-label {
+      margin: 0 0 21px;
+      color: var(--gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 28px;
+      font-size: clamp(3.2rem, 6.6vw, 6.3rem);
+      font-weight: 560;
+      letter-spacing: -0.064em;
+      line-height: 0.96;
+      text-wrap: balance;
+    }
+
+    .hero-intro {
+      max-width: 690px;
+      margin-bottom: 35px;
+      color: #c7d0db;
+      font-size: clamp(1.05rem, 1.7vw, 1.24rem);
+      line-height: 1.68;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .text-link,
+    .quiet-link {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 0.88rem;
+      font-weight: 650;
+    }
+
+    .text-link {
+      border-bottom: 1px solid var(--gold);
+      color: #ffffff;
+    }
+
+    .text-link span {
+      color: var(--gold);
+    }
+
+    .quiet-link {
+      color: var(--muted);
+    }
+
+    .record-card {
+      position: relative;
+      border: 1px solid rgba(168, 196, 223, 0.25);
+      background: rgba(8, 16, 28, 0.76);
+      box-shadow: 0 30px 85px rgba(0, 0, 0, 0.28);
+    }
+
+    .record-card::before,
+    .record-card::after {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border-color: var(--gold);
+      opacity: 0.72;
+    }
+
+    .record-card::before {
+      left: -1px;
+      top: -1px;
+      border-left: 1px solid;
+      border-top: 1px solid;
+    }
+
+    .record-card::after {
+      right: -1px;
+      bottom: -1px;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    .record-heading {
+      min-height: 62px;
+      padding: 0 23px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .record-heading p,
+    .record-heading span {
+      margin: 0;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .record-heading span {
+      color: var(--gold);
+    }
+
+    .record-card dl {
+      margin: 0;
+      padding: 10px 23px;
+    }
+
+    .record-card dl > div {
+      min-height: 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .record-card dl > div:last-child {
+      border-bottom: 0;
+    }
+
+    .record-card dt {
+      color: var(--muted);
+      font-size: 0.77rem;
+    }
+
+    .record-card dd {
+      margin: 0;
+      color: #ffffff;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .scope-strip {
+      min-height: 75px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: stretch;
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .scope-strip span {
+      display: flex;
+      align-items: center;
+      padding: 0 22px;
+      border-left: 1px solid var(--dark-line);
+      color: var(--muted);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .scope-strip span:last-child {
+      border-right: 1px solid var(--dark-line);
+    }
+
+    .light-section {
+      padding: 112px 0 124px;
+      background: var(--paper);
+      color: var(--dark-text);
+    }
+
+    .section-heading {
+      margin-bottom: 52px;
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .section-label {
+      color: var(--dark-gold);
+    }
+
+    h2 {
+      max-width: 730px;
+      margin-bottom: 0;
+      font-size: clamp(2.4rem, 4.6vw, 4.55rem);
+      font-weight: 560;
+      letter-spacing: -0.055em;
+      line-height: 1.01;
+      text-wrap: balance;
+    }
+
+    .section-heading > p {
+      margin-bottom: 4px;
+      color: #4d5864;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .supply-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-left: 1px solid var(--light-line);
+      border-top: 1px solid var(--light-line);
+    }
+
+    .supply-card {
+      min-height: 392px;
+      padding: 32px;
+      border-right: 1px solid var(--light-line);
+      border-bottom: 1px solid var(--light-line);
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .card-topline {
+      margin-bottom: 62px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--dark-gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.70rem;
+    }
+
+    .supply-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.48rem;
+      font-weight: 650;
+      letter-spacing: -0.035em;
+    }
+
+    .supply-card > p {
+      max-width: 520px;
+      margin-bottom: 26px;
+      color: var(--body-text);
+      line-height: 1.66;
+    }
+
+    .supply-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .supply-card li {
+      position: relative;
+      padding: 10px 0 10px 19px;
+      border-top: 1px solid rgba(8, 16, 28, 0.09);
+      color: #263343;
+      font-size: 0.87rem;
+      line-height: 1.45;
+    }
+
+    .supply-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 17px;
+      width: 5px;
+      height: 5px;
+      background: var(--dark-gold);
+    }
+
+    .execution-section {
+      padding: 112px 0 122px;
+      border-top: 1px solid var(--light-line);
+      background: var(--paper-light);
+      color: var(--dark-text);
+    }
+
+    .execution-heading {
+      margin-bottom: 66px;
+    }
+
+    .execution-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--light-line);
+      border-left: 1px solid var(--light-line);
+    }
+
+    .execution-step {
+      min-height: 285px;
+      padding: 26px 24px 30px;
+      border-right: 1px solid var(--light-line);
+      border-bottom: 1px solid var(--light-line);
+    }
+
+    .execution-step > span {
+      display: block;
+      margin-bottom: 72px;
+      color: var(--dark-gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.70rem;
+    }
+
+    .execution-step h3 {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .execution-step p {
+      margin-bottom: 0;
+      color: #596572;
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+
+    .performance-section {
+      padding: 116px 0 124px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 10% 25%,
+          rgba(75, 110, 142, 0.16),
+          transparent 28%
+        ),
+        var(--navy);
+    }
+
+    .performance-intro {
+      max-width: 790px;
+      margin-bottom: 70px;
+    }
+
+    .performance-intro > p:last-child {
+      max-width: 625px;
+      margin: 25px 0 0;
+      color: var(--muted);
+      line-height: 1.70;
+    }
+
+    .performance-list {
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .performance-item {
+      min-height: 178px;
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 24px;
+      align-items: center;
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .performance-number {
+      color: var(--gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.72rem;
+    }
+
+    .performance-content {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+      column-gap: 48px;
+      align-items: center;
+    }
+
+    .performance-category {
+      grid-column: 1;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .performance-item h3 {
+      grid-column: 1;
+      margin: 0;
+      font-size: 1.28rem;
+      font-weight: 620;
+      letter-spacing: -0.025em;
+    }
+
+    .performance-description {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .record-section {
+      padding: 108px 0;
+      border-top: 1px solid var(--dark-line);
+      background:
+        linear-gradient(rgba(168, 196, 223, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 196, 223, 0.04) 1px, transparent 1px),
+        var(--navy-soft);
+      background-size: 56px 56px;
+    }
+
+    .record-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 92px;
+      align-items: start;
+    }
+
+    .record-note {
+      max-width: 490px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      line-height: 1.70;
+    }
+
+    .record-table {
+      margin: 0;
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .record-row {
+      min-height: 61px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      align-items: center;
+      gap: 25px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .record-row dt {
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    .record-row dd {
+      margin: 0;
+      color: #ffffff;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.77rem;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .classification-table {
+      margin-top: 54px;
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .classification-list {
+      margin: 0;
+    }
+
+    .classification-heading {
+      margin: 0;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--dark-line);
+      color: var(--gold);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.66rem;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+    .classification-row {
+      min-height: 65px;
       display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(125,183,255,.28), rgba(214,181,109,.22));
-      border: 1px solid rgba(255,255,255,.20);
-      box-shadow: 0 10px 28px rgba(0,0,0,.28);
-      color: #ffffff;
-      font-weight: 900;
-      font-size: 0.88rem;
+      grid-template-columns: 110px 1fr;
+      gap: 22px;
+      align-items: center;
+      border-bottom: 1px solid var(--dark-line);
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    .classification-row dt {
+      color: #ffffff;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.75rem;
       font-weight: 650;
     }
 
-    .nav-links a {
-      transition: color .2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(125, 183, 255, 0.16);
-      border: 1px solid rgba(125, 183, 255, 0.42);
-      color: var(--accent-2);
-    }
-
-    .hero {
-      padding: 92px 0 72px;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent-2);
-      background: rgba(125,183,255,.10);
-      border: 1px solid rgba(125,183,255,.26);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 0.84rem;
-      font-weight: 750;
-      letter-spacing: 0.03em;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 18px rgba(214,181,109,.8);
-    }
-
-    h1 {
-      font-size: clamp(2.65rem, 6vw, 5.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.07em;
-      margin-bottom: 24px;
-      max-width: 860px;
-    }
-
-    .hero h1 span {
-      color: var(--accent-2);
-    }
-
-    .hero-copy {
-      color: var(--soft);
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
-      max-width: 720px;
-      margin-bottom: 32px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 13px 20px;
-      font-weight: 800;
-      border: 1px solid transparent;
-      transition: transform .18s ease, background .18s ease, border .18s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #d6b56d, #f2dd9a);
-      color: #121212;
-      box-shadow: 0 16px 35px rgba(214,181,109,.18);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.18);
-      color: var(--text);
-    }
-
-    .cred-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
+    .classification-row dd {
+      margin: 0;
       color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .snapshot {
-      background:
-        linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.055)),
-        radial-gradient(circle at top right, rgba(125,183,255,.24), transparent 40%);
-      border: 1px solid rgba(255,255,255,.17);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .snapshot::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      right: -80px;
-      bottom: -80px;
-      border-radius: 50%;
-      background: rgba(214,181,109,.18);
-      filter: blur(4px);
-    }
-
-    .snapshot h2 {
-      font-size: 1.22rem;
-      margin-bottom: 18px;
-      letter-spacing: -0.02em;
-    }
-
-    .snapshot-list {
-      display: grid;
-      gap: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .snapshot-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      padding-bottom: 11px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .snapshot-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .snapshot-item strong {
-      color: var(--text);
+      font-size: 0.82rem;
+      line-height: 1.45;
       text-align: right;
     }
 
-    section {
-      padding: 72px 0;
+    .contact-section {
+      padding: 108px 0;
+      background: var(--paper);
+      color: var(--dark-text);
     }
 
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .section-kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      font-weight: 850;
-      letter-spacing: .14em;
-      font-size: .78rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin-bottom: 14px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .cards {
+    .contact-layout {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 92px;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      min-height: 242px;
-      transition: transform .18s ease, background .18s ease, border .18s ease;
+    .contact-details {
+      border-top: 1px solid var(--light-line);
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      background: var(--panel-strong);
-      border-color: rgba(125,183,255,.34);
+    .contact-purpose {
+      padding: 24px 0 32px;
+      margin: 0;
+      color: var(--body-text);
+      line-height: 1.68;
     }
 
-    .card-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background: rgba(125,183,255,.13);
-      border: 1px solid rgba(125,183,255,.25);
+    .contact-line {
+      min-height: 66px;
       display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      font-weight: 900;
-      color: var(--accent-2);
-    }
-
-    .card h3 {
-      font-size: 1.08rem;
-      margin-bottom: 10px;
-      letter-spacing: -0.025em;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 34px;
-      align-items: stretch;
-    }
-
-    .feature-panel {
-      background:
-        linear-gradient(145deg, rgba(125,183,255,.14), rgba(255,255,255,.055)),
-        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .feature-panel h3 {
-      font-size: 1.65rem;
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin-bottom: 14px;
-    }
-
-    .feature-panel p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .check-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .check {
-      display: flex;
-      gap: 12px;
-      color: var(--soft);
-      font-weight: 650;
-    }
-
-    .check span {
-      color: var(--gold);
-      font-weight: 900;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .experience {
-      border-radius: var(--radius);
-      padding: 25px;
-      background: rgba(255,255,255,.065);
-      border: 1px solid rgba(255,255,255,.13);
-    }
-
-    .experience h3 {
-      margin-bottom: 8px;
-      font-size: 1.16rem;
-    }
-
-    .experience p {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .performance {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
-      border-top: 1px solid rgba(255,255,255,.09);
-      border-bottom: 1px solid rgba(255,255,255,.09);
-    }
-
-    .performance-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .performance-item {
-      display: flex;
-      gap: 18px;
-      background: rgba(255,255,255,.065);
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-
-    .num {
-      flex: 0 0 auto;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(214,181,109,.15);
-      border: 1px solid rgba(214,181,109,.26);
-      color: #f4d890;
-      font-weight: 900;
-    }
-
-    .performance-item h3 {
-      font-size: 1.08rem;
-      margin-bottom: 7px;
-    }
-
-    .performance-item p {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .cta {
-      padding: 78px 0;
-    }
-
-    .cta-box {
-      border-radius: 30px;
-      padding: 42px;
-      background:
-        radial-gradient(circle at 18% 0%, rgba(125,183,255,.25), transparent 34%),
-        linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,.055));
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
+      grid-template-columns: 0.7fr 1.3fr;
       align-items: center;
+      gap: 24px;
+      border-top: 1px solid var(--light-line);
     }
 
-    .cta-box h2 {
-      margin-bottom: 10px;
+    .contact-line span {
+      color: #65717d;
+      font-size: 0.80rem;
     }
 
-    .cta-box p {
-      color: var(--muted);
-      max-width: 720px;
-    }
-
-    .contact-card {
-      background: rgba(3,8,20,.55);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: var(--radius);
-      padding: 24px;
-      min-width: 330px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      font-size: 0.94rem;
-      margin-bottom: 8px;
-    }
-
-    .contact-card a {
-      display: block;
-      color: var(--accent-2);
-      font-weight: 900;
-      font-size: 1rem;
+    .contact-line strong,
+    .contact-line a {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.77rem;
+      font-weight: 650;
+      text-align: right;
       overflow-wrap: anywhere;
     }
 
+    .contact-line a {
+      color: var(--dark-gold);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+    }
+
     footer {
-      padding: 32px 0;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,.09);
-      font-size: 0.92rem;
+      padding: 28px 0;
+      border-top: 1px solid var(--dark-line);
+      background: var(--navy-deep);
     }
 
     .footer-row {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 25px;
+      color: #8f9ba9;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.04em;
     }
 
-    .keywords {
-      color: rgba(184,194,209,.72);
-      margin-top: 14px;
-      font-size: .86rem;
+    .footer-row p {
+      margin: 0;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .split,
-      .cta-box {
-        grid-template-columns: 1fr;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
+    @media (max-width: 900px) {
+      .navigation nav {
         display: none;
       }
 
-      .contact-card {
-        min-width: 0;
-      }
-    }
-
-    @media (max-width: 640px) {
       .hero {
-        padding-top: 64px;
+        padding-top: 78px;
       }
 
-      .cards,
-      .performance-list {
+      .hero-grid,
+      .section-heading,
+      .record-layout,
+      .contact-layout {
         grid-template-columns: 1fr;
       }
 
-      .snapshot-item {
+      .hero-grid {
+        gap: 0;
+      }
+
+      .hero-copy {
+        padding-bottom: 58px;
+      }
+
+      .record-card {
+        margin-bottom: 58px;
+      }
+
+      .section-heading,
+      .record-layout,
+      .contact-layout {
+        gap: 38px;
+      }
+
+      .scope-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .scope-strip span:nth-child(3),
+      .scope-strip span:nth-child(4) {
+        border-top: 1px solid var(--dark-line);
+      }
+
+      .execution-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .performance-content {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .performance-description {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .shell {
+        width: min(calc(100% - 32px), var(--shell));
+      }
+
+      .navigation {
+        min-height: 70px;
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      h1 {
+        font-size: clamp(2.75rem, 14vw, 4.5rem);
+      }
+
+      .hero-links {
+        align-items: flex-start;
         flex-direction: column;
-        gap: 2px;
       }
 
-      .snapshot-item strong {
-        text-align: left;
+      .record-heading,
+      .record-card dl {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      .cta-box {
-        padding: 28px;
+      .scope-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .scope-strip span {
+        min-height: 53px;
+        border-right: 1px solid var(--dark-line);
+        border-bottom: 1px solid var(--dark-line);
+      }
+
+      .light-section,
+      .execution-section,
+      .performance-section,
+      .record-section,
+      .contact-section {
+        padding: 82px 0;
+      }
+
+      .supply-grid,
+      .execution-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .supply-card {
+        min-height: 0;
+        padding: 25px 22px;
+      }
+
+      .card-topline {
+        margin-bottom: 42px;
+      }
+
+      .execution-step {
+        min-height: 0;
+      }
+
+      .execution-step > span {
+        margin-bottom: 42px;
+      }
+
+      .performance-intro {
+        margin-bottom: 50px;
       }
 
       .performance-item {
+        min-height: 0;
+        padding: 28px 0;
+        grid-template-columns: 42px 1fr;
+        align-items: start;
+      }
+
+      .record-row {
+        grid-template-columns: 0.8fr 1.2fr;
+      }
+
+      .classification-row {
+        grid-template-columns: 88px 1fr;
+      }
+
+      .contact-line {
+        grid-template-columns: 0.65fr 1.35fr;
+      }
+
+      .footer-row {
         flex-direction: column;
+        gap: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a href="#" class="brand" aria-label="EE Stock LLC Home">
-        <div class="brand-mark">EES</div>
-        <div>EE Stock LLC</div>
+  <header class="site-header">
+    <div class="shell navigation">
+      <a class="wordmark" href="#top" aria-label="EE Stock LLC home">
+        <span class="wordmark-mark" aria-hidden="true">EE</span>
+        <span>EE Stock<small>LLC</small></span>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#experience">Experience</a>
+      <nav aria-label="Primary navigation">
+        <a href="#supply">Supply Scope</a>
+        <a href="#execution">Execution</a>
         <a href="#performance">Performance</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#record">Company Record</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">California Small Business · Government Supply Support</div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">California Small Business · Government Supplier</p>
 
-          <h1>
-            Government Supply, <span>Containers</span>, Equipment & Contract Execution.
-          </h1>
+          <h1>Products and equipment for public-sector requirements.</h1>
 
-          <p class="hero-copy">
-            EE Stock LLC supports federal, state, local, and commercial buyers with storage containers,
-            modular support, commercial equipment, specialty procurement, logistics coordination, and
-            execution-focused contract support.
+          <p class="hero-intro">
+            EE Stock LLC furnishes containers, modular space, equipment, and
+            specialized industrial products for federal, state, and local
+            agencies.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:VAVALOS@EESTOCKLLC.COM">Send RFQ / Requirement</a>
-            <a class="btn btn-secondary" href="#capabilities">View Capabilities</a>
-          </div>
+          <nav class="hero-links" aria-label="Page shortcuts">
+            <a class="text-link" href="#supply">
+              Review supply scope <span aria-hidden="true">↓</span>
+            </a>
 
-          <div class="cred-row">
-            <div class="pill">CAGE 951A3</div>
-            <div class="pill">UEI KDL4YN8S42F7</div>
-            <div class="pill">Small Business</div>
-            <div class="pill">Moreno Valley, CA</div>
-          </div>
+            <a class="quiet-link" href="#record">
+              View contracting information
+            </a>
+          </nav>
         </div>
 
-        <aside class="snapshot" aria-label="Government vendor snapshot">
-          <h2>Government Vendor Snapshot</h2>
-
-          <div class="snapshot-list">
-            <div class="snapshot-item">
-              <span>Company</span>
-              <strong>EE Stock LLC</strong>
-            </div>
-
-            <div class="snapshot-item">
-              <span>CAGE Code</span>
-              <strong>951A3</strong>
-            </div>
-
-            <div class="snapshot-item">
-              <span>UEI</span>
-              <strong>KDL4YN8S42F7</strong>
-            </div>
-
-            <div class="snapshot-item">
-              <span>Business Type</span>
-              <strong>Small Business</strong>
-            </div>
-
-            <div class="snapshot-item">
-              <span>Location</span>
-              <strong>Moreno Valley, California</strong>
-            </div>
-
-            <div class="snapshot-item">
-              <span>Email</span>
-              <strong>VAVALOS@EESTOCKLLC.COM</strong>
-            </div>
+        <aside class="record-card" aria-label="EE Stock company record">
+          <div class="record-heading">
+            <p>Company Record</p>
+            <span>Federal Vendor</span>
           </div>
+
+          <dl>
+            <div>
+              <dt>Legal name</dt>
+              <dd>EE Stock LLC</dd>
+            </div>
+
+            <div>
+              <dt>Business type</dt>
+              <dd>Small Business</dd>
+            </div>
+
+            <div>
+              <dt>CAGE code</dt>
+              <dd>951A3</dd>
+            </div>
+
+            <div>
+              <dt>UEI</dt>
+              <dd>KDL4YN8S42F7</dd>
+            </div>
+
+            <div>
+              <dt>Registration</dt>
+              <dd>Active in SAM</dd>
+            </div>
+
+            <div>
+              <dt>Location</dt>
+              <dd>Moreno Valley, California</dd>
+            </div>
+          </dl>
         </aside>
       </div>
-    </section>
 
-    <section id="services">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Core Services</div>
-          <h2>Practical support for public-sector and commercial requirements.</h2>
-          <p>
-            EE Stock LLC focuses on tangible supply, equipment, and project-support needs where buyers
-            need responsive coordination, clear communication, and reliable follow-through.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">01</div>
-            <h3>Storage & Shipping Containers</h3>
-            <p>
-              20-foot and 40-foot storage containers, conex boxes, high-cube units, specialty storage,
-              container sourcing, delivery coordination, and rental support.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">02</div>
-            <h3>Modular & Facility Support</h3>
-            <p>
-              Mobile offices, modular units, temporary site support, setup coordination, facility support,
-              field requirements, and project closeout coordination.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">03</div>
-            <h3>Commercial Heavy Equipment</h3>
-            <p>
-              Equipment rentals, equipment procurement, trailers, generators, lifts, jobsite support
-              equipment, and commercial supply coordination.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">04</div>
-            <h3>Specialty Procurement</h3>
-            <p>
-              Hard-to-source supply items, DLA-style requirements, vendor coordination, quote support,
-              delivery tracking, and contract execution.
-            </p>
-          </article>
-        </div>
+      <div class="shell scope-strip" role="group" aria-label="Operating scope">
+        <span>Specification Review</span>
+        <span>Product Compliance</span>
+        <span>Delivery Planning</span>
+        <span>Contract Administration</span>
       </div>
     </section>
 
-    <section id="capabilities">
-      <div class="container split">
-        <div class="feature-panel">
-          <div class="section-kicker">Capabilities</div>
-          <h3>Built for buyers who need execution, not excuses.</h3>
-          <p>
-            EE Stock LLC supports requirements where sourcing, logistics, vendor coordination, and
-            contract follow-through matter. The company is positioned for small business opportunities,
-            urgent requirements, and practical field-support needs.
-          </p>
-
-          <div class="check-list">
-            <div class="check"><span>✓</span> Federal, state, local, and commercial support</div>
-            <div class="check"><span>✓</span> Containers, modular units, equipment, and supply requirements</div>
-            <div class="check"><span>✓</span> Vendor management and delivery coordination</div>
-            <div class="check"><span>✓</span> Responsive communication and contract administration</div>
-            <div class="check"><span>✓</span> Urgent procurement and emergency support readiness</div>
+    <section class="light-section" id="supply">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Supply Scope</p>
+            <h2>Defined around the requirement.</h2>
           </div>
-        </div>
 
-        <div class="cards" style="grid-template-columns: repeat(2, 1fr);">
-          <article class="card">
-            <div class="card-icon">NAICS</div>
-            <h3>Applicable Categories</h3>
-            <p>
-              Containers, prefab metal buildings, equipment rental, commercial supply, specialty goods,
-              trailers, and related public-sector procurement categories.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">PSC</div>
-            <h3>Supply-Focused Work</h3>
-            <p>
-              Storage and shipping containers, material handling support, modular/facility-related
-              supplies, and commercial equipment requirements.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">RFQ</div>
-            <h3>Buyer Communication</h3>
-            <p>
-              RFQs, capability requests, vendor inquiries, outreach requests, public-sector coordination,
-              and contract-related communications.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">24</div>
-            <h3>Urgent Support</h3>
-            <p>
-              Emergency logistics, storage needs, temporary facility support, rapid vendor coordination,
-              and time-sensitive public-sector requirements.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Government Experience</div>
-          <h2>Public-sector familiarity with practical delivery needs.</h2>
           <p>
-            EE Stock LLC has supported government and public-sector requirements involving supply,
-            logistics coordination, equipment support, and contract execution.
+            Product selection begins with the solicitation: dimensions,
+            performance criteria, packaging, delivery terms, site access, and
+            required documentation.
           </p>
         </div>
 
-        <div class="experience-grid">
-          <article class="experience">
-            <h3>Defense Logistics Agency</h3>
+        <div class="supply-grid">
+          <article class="supply-card">
+            <div class="card-topline">
+              <span>01</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+
+            <h3>Containers &amp; Enclosures</h3>
+
             <p>
-              Supported DLA supply requirements involving specialty container-related needs, government
-              delivery expectations, procurement coordination, and contract follow-through.
+              Standard and purpose-built units for storage, transport,
+              workspace, and equipment protection.
+            </p>
+
+            <ul>
+              <li>10-, 20-, and 40-foot dry freight containers</li>
+              <li>High-cube, refrigerated, insulated, and modified units</li>
+              <li>Specialty shipping cases and cylinder containers</li>
+            </ul>
+          </article>
+
+          <article class="supply-card">
+            <div class="card-topline">
+              <span>02</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+
+            <h3>Modular &amp; Site Facilities</h3>
+
+            <p>
+              Temporary and permanent space configured around the stated site
+              and operational requirement.
+            </p>
+
+            <ul>
+              <li>Mobile offices and modular buildings</li>
+              <li>In-plant rooms, shelters, and storage structures</li>
+              <li>
+                Delivery, setup, ramps, stairs, and accessories when specified
+              </li>
+            </ul>
+          </article>
+
+          <article class="supply-card">
+            <div class="card-topline">
+              <span>03</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+
+            <h3>Equipment &amp; Material Handling</h3>
+
+            <p>
+              Commercial equipment furnished to the required capacity,
+              configuration, and destination.
+            </p>
+
+            <ul>
+              <li>Generators, lifts, telehandlers, and compact equipment</li>
+              <li>Trailers, load banks, and jobsite equipment</li>
+              <li>Purchase or scheduled use when a solicitation requires it</li>
+            </ul>
+          </article>
+
+          <article class="supply-card">
+            <div class="card-topline">
+              <span>04</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+
+            <h3>Fabricated &amp; Industrial Products</h3>
+
+            <p>
+              Specified products that require technical review, manufacturer
+              confirmation, or custom fabrication.
+            </p>
+
+            <ul>
+              <li>Lockers, cabinets, racks, and secure storage systems</li>
+              <li>Metal components, shelters, and equipment housings</li>
+              <li>Specialized commercial and military-use products</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="execution-section" id="execution">
+      <div class="shell">
+        <div class="section-heading execution-heading">
+          <div>
+            <p class="section-label">Contract Execution</p>
+            <h2>From specification to acceptance.</h2>
+          </div>
+
+          <p>
+            Supply work is managed against the complete requirement—not only
+            the item description. Delivery terms, documentation, and site
+            conditions are treated as part of the product.
+          </p>
+        </div>
+
+        <div class="execution-grid">
+          <article class="execution-step">
+            <span>01</span>
+            <h3>Requirement Review</h3>
+            <p>
+              Dimensions, salient characteristics, clauses, packaging,
+              destination, schedule, and submission requirements are reviewed
+              together.
             </p>
           </article>
 
-          <article class="experience">
-            <h3>Department of the Navy</h3>
+          <article class="execution-step">
+            <span>02</span>
+            <h3>Product Confirmation</h3>
             <p>
-              Supported Navy requirements involving storage container rentals, site coordination,
-              scheduling, communication, and continued contract support.
+              The proposed make, model, configuration, technical data,
+              availability, and lead time are checked against the stated
+              requirement.
             </p>
           </article>
 
-          <article class="experience">
-            <h3>State & Local Government</h3>
+          <article class="execution-step">
+            <span>03</span>
+            <h3>Delivery Planning</h3>
             <p>
-              Supported public-sector procurement needs involving containers, equipment, modular support,
-              delivery coordination, and vendor management.
+              Freight, appointments, site access, unloading, setup, and
+              installation responsibilities are defined before award
+              execution.
+            </p>
+          </article>
+
+          <article class="execution-step">
+            <span>04</span>
+            <h3>Contract Administration</h3>
+            <p>
+              Submittals, order status, modifications, delivery records,
+              invoicing, and closeout are managed through completion.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="performance" class="performance">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Past Performance Style Support</div>
-          <h2>Focused on the details that keep requirements moving.</h2>
+    <section class="performance-section" id="performance">
+      <div class="shell">
+        <div class="performance-intro">
+          <p class="eyebrow">Selected Performance</p>
+          <h2>Government work with a defined record.</h2>
+
           <p>
-            EE Stock LLC brings a hands-on approach to sourcing, coordination, documentation, delivery,
-            and closeout support.
+            Representative federal and state performance is shown below.
+            Additional contract information is available when relevant to an
+            acquisition.
           </p>
         </div>
 
         <div class="performance-list">
           <article class="performance-item">
-            <div class="num">1</div>
-            <div>
-              <h3>Storage Container Rental Support</h3>
-              <p>
-                Supported container rental requirements involving delivery coordination, rental period
-                tracking, site communication, and contract administration.
+            <span class="performance-number">01</span>
+
+            <div class="performance-content">
+              <p class="performance-category">Specialty Supply · 2025</p>
+              <h3>Defense Logistics Agency</h3>
+              <p class="performance-description">
+                Furnished 20 specialized oxygen-cylinder containers under a
+                federal supply award.
               </p>
             </div>
           </article>
 
           <article class="performance-item">
-            <div class="num">2</div>
-            <div>
-              <h3>Specialty Container Procurement</h3>
-              <p>
-                Coordinated sourcing and delivery support for specialty container-related government
-                supply requirements and commercial-equivalent needs.
+            <span class="performance-number">02</span>
+
+            <div class="performance-content">
+              <p class="performance-category">Container Services</p>
+              <h3>Department of the Navy</h3>
+              <p class="performance-description">
+                Two 20-foot storage containers supporting Portsmouth Naval
+                Shipyard operations in Maine, including continued contract
+                support.
               </p>
             </div>
           </article>
 
           <article class="performance-item">
-            <div class="num">3</div>
-            <div>
-              <h3>Modular / Temporary Facility Support</h3>
-              <p>
-                Supported temporary site and modular-related requirements through vendor coordination,
-                schedule support, and project communication.
-              </p>
-            </div>
-          </article>
+            <span class="performance-number">03</span>
 
-          <article class="performance-item">
-            <div class="num">4</div>
-            <div>
-              <h3>Equipment & Field Support Coordination</h3>
-              <p>
-                Supported equipment-related requirements involving commercial sourcing, supplier
-                communication, delivery planning, and buyer-facing execution.
+            <div class="performance-content">
+              <p class="performance-category">Equipment Supply</p>
+              <h3>State of California</h3>
+              <p class="performance-description">
+                Equipment furnished under state purchase orders with
+                destination delivery and agency documentation.
               </p>
             </div>
           </article>
@@ -903,67 +1208,115 @@
       </div>
     </section>
 
-    <section>
-      <div class="container split">
-        <div class="section-head" style="margin-bottom: 0;">
-          <div class="section-kicker">Emergency & Urgent Procurement</div>
-          <h2>Ready to support urgent field and public-sector needs.</h2>
-          <p>
-            EE Stock LLC can support urgent requirements involving storage containers, temporary site
-            support, commercial equipment, delivery coordination, and specialty procurement. The focus is
-            simple: understand the requirement, coordinate the right vendors, and keep the buyer informed.
+    <section class="record-section" id="record">
+      <div class="shell record-layout">
+        <div>
+          <p class="eyebrow">Contracting Information</p>
+          <h2>A concise record for acquisition review.</h2>
+
+          <p class="record-note">
+            EE Stock LLC is an active federal registrant and a California small
+            business. Classifications shown are representative; each
+            procurement is reviewed under its assigned code.
           </p>
         </div>
 
-        <div class="feature-panel">
-          <h3>Common Support Areas</h3>
+        <div>
+          <dl class="record-table">
+            <div class="record-row">
+              <dt>Legal name</dt>
+              <dd>EE Stock LLC</dd>
+            </div>
 
-          <div class="check-list">
-            <div class="check"><span>✓</span> Emergency storage and container needs</div>
-            <div class="check"><span>✓</span> Temporary site and field support</div>
-            <div class="check"><span>✓</span> Commercial heavy equipment coordination</div>
-            <div class="check"><span>✓</span> Public agency and contractor support</div>
-            <div class="check"><span>✓</span> Specialty supply and hard-to-source requirements</div>
+            <div class="record-row">
+              <dt>Business type</dt>
+              <dd>Small Business</dd>
+            </div>
+
+            <div class="record-row">
+              <dt>CAGE code</dt>
+              <dd>951A3</dd>
+            </div>
+
+            <div class="record-row">
+              <dt>UEI</dt>
+              <dd>KDL4YN8S42F7</dd>
+            </div>
+
+            <div class="record-row">
+              <dt>Registration</dt>
+              <dd>Active in SAM</dd>
+            </div>
+
+            <div class="record-row">
+              <dt>Location</dt>
+              <dd>Moreno Valley, California</dd>
+            </div>
+          </dl>
+
+          <div class="classification-table">
+            <p class="classification-heading">Representative Classifications</p>
+
+            <dl class="classification-list">
+              <div class="classification-row">
+                <dt>332311</dt>
+                <dd>
+                  Prefabricated Metal Building &amp; Component Manufacturing
+                </dd>
+              </div>
+
+              <div class="classification-row">
+                <dt>332439</dt>
+                <dd>Other Metal Container Manufacturing</dd>
+              </div>
+
+              <div class="classification-row">
+                <dt>532490</dt>
+                <dd>
+                  Other Commercial &amp; Industrial Equipment Rental and Leasing
+                </dd>
+              </div>
+
+              <div class="classification-row">
+                <dt>PSC 8145</dt>
+                <dd>
+                  Specialized Shipping and Storage Containers
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="cta">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <div class="section-kicker">Contact</div>
-            <h2>Send RFQs, capability requests, and project requirements.</h2>
-            <p>
-              For official correspondence, capability review, vendor coordination, subcontractor outreach,
-              or procurement communication, contact EE Stock LLC directly.
-            </p>
+    <section class="contact-section" id="contact">
+      <div class="shell contact-layout">
+        <div>
+          <p class="section-label">Contracting Contact</p>
+          <h2>Official correspondence.</h2>
+        </div>
 
-            <div class="hero-actions" style="margin-top: 24px; margin-bottom: 0;">
-              <a class="btn btn-primary" href="mailto:VAVALOS@EESTOCKLLC.COM">Email EE Stock LLC</a>
-              <a class="btn btn-secondary" href="https://www.eestockllc.com">www.EEStockLLC.com</a>
-            </div>
+        <div class="contact-details">
+          <p class="contact-purpose">
+            RFQs, capability reviews, and contract correspondence may be
+            directed to EE Stock LLC.
+          </p>
+
+          <div class="contact-line">
+            <span>Director</span>
+            <strong>Vincent Avalos</strong>
           </div>
 
-          <div class="contact-card">
-            <p>Primary Email</p>
-            <a href="mailto:VAVALOS@EESTOCKLLC.COM">VAVALOS@EESTOCKLLC.COM</a>
+          <div class="contact-line">
+            <span>Email</span>
+            <a href="mailto:VAVALOS@EESTOCKLLC.COM">
+              VAVALOS@EESTOCKLLC.COM
+            </a>
+          </div>
 
-            <br />
-
-            <p>Company</p>
-            <a href="#">EE Stock LLC</a>
-
-            <br />
-
-            <p>Vendor Identifiers</p>
-            <a href="#">CAGE 951A3 · UEI KDL4YN8S42F7</a>
-
-            <br />
-
-            <p>Location</p>
-            <a href="#">Moreno Valley, CA</a>
+          <div class="contact-line">
+            <span>Location</span>
+            <strong>Moreno Valley, California</strong>
           </div>
         </div>
       </div>
@@ -971,24 +1324,17 @@
   </main>
 
   <footer>
-    <div class="container footer-row">
-      <div>
-        <strong>EE Stock LLC</strong><br />
-        Government Supply · Containers · Equipment · Modular Support · Logistics Coordination
-        <div class="keywords">
-          Storage containers · Shipping containers · Conex boxes · Modular units · Mobile offices · Commercial heavy equipment · Equipment rental · Specialty procurement · Government contractor · Emergency logistics
-        </div>
-      </div>
-
-      <div>
-        CAGE 951A3 · UEI KDL4YN8S42F7<br />
-        © <span id="year"></span> EE Stock LLC. All rights reserved.
-      </div>
+    <div class="shell footer-row">
+      <p>© <span id="year">2026</span> EE Stock LLC</p>
+      <p>Government Supply · CAGE 951A3 · UEI KDL4YN8S42F7</p>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>
