@@ -13,11 +13,7 @@
 
   <meta name="theme-color" content="#f4f8fb">
 
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231e394b'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-size='29' fill='white'%3EEE%3C/text%3E%3C/svg%3E"
-  >
+  <link rel="icon" type="image/png" href="./ee-stock-logo.png">
 
   <style>
     :root {
@@ -26,7 +22,6 @@
       --ink: #203846;
       --muted: #586d7a;
       --blue: #38779a;
-      --light-blue: #e6f1f8;
       --line: #dbe5ec;
       --width: 1200px;
     }
@@ -120,13 +115,13 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      flex-shrink: 0;
     }
 
     .brand img {
       width: 70px;
       height: 62px;
       object-fit: contain;
+      flex-shrink: 0;
     }
 
     .brand-name {
@@ -233,7 +228,6 @@
     /* ANIMATION */
 
     .animation-frame {
-      position: relative;
       overflow: hidden;
       background: #e7eff5;
       border: 1px solid #d5e1e9;
@@ -265,7 +259,7 @@
       letter-spacing: 0.06em;
     }
 
-    /* COMPANY DETAILS STRIP */
+    /* COMPANY DETAILS */
 
     .details-strip {
       background: var(--white);
@@ -274,7 +268,7 @@
 
     .details-inner {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .detail {
@@ -337,7 +331,7 @@
 
     .capabilities {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -512,7 +506,8 @@
       .header-inner {
         min-height: 80px;
         flex-wrap: wrap;
-        gap: 0;
+        gap: 12px;
+        padding-block: 12px;
       }
 
       .brand {
@@ -535,8 +530,9 @@
       .navigation {
         width: 100%;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 12px;
-        padding-bottom: 14px;
+        padding-bottom: 4px;
       }
 
       .js .navigation {
@@ -673,11 +669,10 @@
 
       <a class="brand" href="#home" aria-label="EE Stock LLC home">
         <img
-          src="./logo.png"
+          src="./ee-stock-logo.png"
           alt=""
           width="70"
           height="62"
-          id="company-logo"
         >
 
         <span>
@@ -712,8 +707,6 @@
 
   <main id="main">
 
-    <!-- INTRODUCTION AND UPDATED ANIMATION -->
-
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="container">
 
@@ -738,7 +731,7 @@
 
         <div class="animation-frame">
           <img
-            src="./ee-stock-commercial-logistics.svg?v=3"
+            src="./ees-logistics-animation.svg?v=4"
             alt="Commercial logistics scene with an EE Stock tractor-trailer traveling along a road and a forklift working at a distribution center."
             width="1600"
             height="720"
@@ -754,10 +747,9 @@
       </div>
     </section>
 
-    <!-- COMPANY DETAILS -->
-
     <div class="details-strip">
       <div class="container details-inner">
+
         <div class="detail">
           <span class="detail-label">Established</span>
           <span class="detail-value">2021</span>
@@ -772,10 +764,9 @@
           <span class="detail-label">Business</span>
           <span class="detail-value">Small Business</span>
         </div>
+
       </div>
     </div>
-
-    <!-- CAPABILITIES -->
 
     <section
       class="section"
@@ -800,6 +791,7 @@
         </div>
 
         <div class="capabilities">
+
           <article class="capability">
             <span class="capability-number">01</span>
             <h3>Commercial Supplies</h3>
@@ -828,12 +820,10 @@
               needs.
             </p>
           </article>
-        </div>
 
+        </div>
       </div>
     </section>
-
-    <!-- AGENCY EXPERIENCE -->
 
     <section
       class="section experience"
@@ -857,6 +847,7 @@
         </div>
 
         <ul class="agency-list">
+
           <li>
             <span class="agency-name">
               Defense Logistics Agency
@@ -892,12 +883,10 @@
               Local government
             </span>
           </li>
-        </ul>
 
+        </ul>
       </div>
     </section>
-
-    <!-- COMPANY -->
 
     <section
       class="section"
@@ -908,9 +897,7 @@
 
         <div>
           <p class="eyebrow">The Company</p>
-          <h2 id="company-title">
-            EE Stock LLC
-          </h2>
+          <h2 id="company-title">EE Stock LLC</h2>
         </div>
 
         <div class="company-copy">
@@ -936,6 +923,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
+
       <div>
         <span class="footer-name">EE STOCK LLC</span>
         <span class="footer-location">
@@ -947,17 +935,16 @@
         &copy; <span id="year">2026</span> EE Stock LLC.
         All rights reserved.
       </p>
+
     </div>
   </footer>
 
   <script>
     document.documentElement.classList.add("js");
 
-    // Automatically maintain the copyright year.
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Mobile navigation.
     const menuButton = document.querySelector(".menu-toggle");
     const navigation = document.getElementById("main-navigation");
 
@@ -969,6 +956,7 @@
 
     menuButton.addEventListener("click", function () {
       const isOpen = navigation.classList.toggle("is-open");
+
       menuButton.setAttribute("aria-expanded", String(isOpen));
       menuButton.textContent = isOpen ? "Close" : "Menu";
     });
@@ -986,19 +974,6 @@
         menuButton.focus();
       }
     });
-
-    // Preserve the company name if the logo file is unavailable.
-    const logo = document.getElementById("company-logo");
-
-    function hideMissingLogo() {
-      logo.style.display = "none";
-    }
-
-    logo.addEventListener("error", hideMissingLogo);
-
-    if (logo.complete && logo.naturalWidth === 0) {
-      hideMissingLogo();
-    }
   </script>
 </body>
 </html>
