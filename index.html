@@ -1,42 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
-  <title>EE Stock LLC | Government Contracting</title>
+  <title>EE Stock LLC | Government & Commercial Supply</title>
 
   <meta
     name="description"
-    content="EE Stock LLC supports federal and California government agencies with commercial supplies, equipment, facilities and contract support."
+    content="EE Stock LLC supports government agencies and commercial organizations with commercial supplies, equipment, and project requirements."
   >
 
-  <meta name="theme-color" content="#f7f9fb">
+  <meta name="theme-color" content="#f4f8fb">
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231e394b'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-size='29' fill='white'%3EEE%3C/text%3E%3C/svg%3E"
+  >
 
   <style>
     :root {
-      --blue: #095ee8;
-      --deep: #0d2034;
-      --ink: #1c2b38;
-      --muted: #667482;
-      --line: #dce3e9;
-      --cloud: #f4f7f9;
-      --ice: #eaf4fb;
       --white: #ffffff;
-      --page: 1240px;
+      --background: #f4f8fb;
+      --ink: #203846;
+      --muted: #586d7a;
+      --blue: #38779a;
+      --light-blue: #e6f1f8;
+      --line: #dbe5ec;
+      --width: 1200px;
     }
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 84px;
+      scroll-padding-top: 110px;
     }
 
     body {
@@ -45,18 +48,159 @@
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.55;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
-    body::selection {
-      color: var(--deep);
-      background: #bcdcff;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 6px;
+    }
+
+    ::selection {
+      background: #d2e7f4;
+      color: var(--ink);
+    }
+
+    .container {
+      width: min(var(--width), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      z-index: 100;
+      padding: 12px 18px;
+      background: var(--white);
+      border: 1px solid var(--ink);
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    /* HEADER */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 70px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      line-height: 1.3;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .navigation a {
+      padding-block: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 180ms ease;
+    }
+
+    .navigation a:hover {
+      color: var(--blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 9px 15px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* INTRODUCTION */
+
+    .hero {
+      padding-top: 88px;
+      background:
+        radial-gradient(
+          ellipse at 85% 15%,
+          #e6f1f8 0,
+          transparent 55%
+        ),
+        linear-gradient(180deg, #ffffff, #f4f8fb);
+    }
+
+    .hero-intro {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: end;
+      gap: 72px;
+      padding-bottom: 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
     }
 
     h1,
@@ -66,619 +210,444 @@
       margin-top: 0;
     }
 
-    .wrap {
-      width: min(calc(100% - 56px), var(--page));
-      margin-inline: auto;
-    }
-
-    .eyebrow {
-      margin: 0 0 22px;
-      color: var(--blue);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    /*
-      HEADER
-    */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    .header-inner {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    /*
-      The logo image contains considerable transparent space.
-      This window crops it visually without altering the file.
-    */
-
-    .logo-window {
-      position: relative;
-      width: 38px;
-      height: 58px;
-      overflow: hidden;
-      flex: 0 0 auto;
-    }
-
-    .logo-window img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 124px;
-      max-width: none;
-      height: auto;
-      transform: translate(-50%, -50%);
-    }
-
-    .brand-name {
-      color: var(--deep);
-      font-size: 0.88rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 34px;
-    }
-
-    .nav a {
-      color: #455563;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition:
-        color 160ms ease,
-        background-color 160ms ease;
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: var(--blue);
-    }
-
-    .nav .contact-link {
-      padding: 12px 18px;
-      background: var(--deep);
-      color: var(--white);
-    }
-
-    .nav .contact-link:hover,
-    .nav .contact-link:focus-visible {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    /*
-      HERO
-    */
-
-    .hero {
-      min-height: calc(100vh - 82px);
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-      padding: 110px 0 74px;
-      background:
-        linear-gradient(
-          115deg,
-          #ffffff 0 58%,
-          var(--ice) 58%
-        );
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.55fr 0.55fr;
-      gap: 64px;
-      align-items: end;
-    }
-
-    .hero h1 {
-      max-width: 980px;
-      margin-bottom: 35px;
-      color: var(--deep);
-      font-size: clamp(4rem, 8.4vw, 8rem);
-      font-weight: 800;
-      letter-spacing: -0.07em;
-      line-height: 0.88;
-    }
-
-    .hero h1 em {
-      color: var(--blue);
-      font-style: normal;
-    }
-
-    .hero-copy {
-      max-width: 720px;
+    h1 {
       margin-bottom: 0;
-      color: #536473;
-      font-size: clamp(1.05rem, 1.55vw, 1.3rem);
+      font-size: clamp(42px, 5.3vw, 72px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
     }
 
-    .hero-side {
-      padding: 30px 0 6px;
-      border-top: 4px solid var(--blue);
+    h1 span {
+      color: var(--blue);
     }
 
-    .hero-side p {
-      margin-bottom: 0;
-      color: var(--deep);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
+    .hero-description {
+      max-width: 420px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 18px;
       line-height: 1.8;
-      text-transform: uppercase;
     }
 
-    /*
-      COMPANY
-    */
+    /* ANIMATION */
 
-    .identity {
-      background: var(--deep);
-      color: var(--white);
-    }
-
-    .identity-grid {
-      min-height: 600px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-    }
-
-    .identity-main {
-      padding:
-        clamp(80px, 10vw, 140px)
-        clamp(40px, 7vw, 100px)
-        clamp(80px, 10vw, 140px)
-        max(28px, calc((100vw - var(--page)) / 2));
-    }
-
-    .identity-main .eyebrow {
-      color: #7fb7ff;
-    }
-
-    .identity h2 {
-      max-width: 760px;
-      margin-bottom: 36px;
-      font-size: clamp(3rem, 6vw, 6.2rem);
-      font-weight: 750;
-      letter-spacing: -0.06em;
-      line-height: 0.95;
-    }
-
-    .identity-main > p:last-child {
-      max-width: 650px;
-      margin-bottom: 0;
-      color: #b9c7d1;
-      font-size: 1.1rem;
-    }
-
-    .identity-mark {
+    .animation-frame {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
-      padding: 60px;
-      background: var(--blue);
+      background: #e7eff5;
+      border: 1px solid #d5e1e9;
+      border-radius: 12px 12px 0 0;
     }
 
-    .identity-mark::before,
-    .identity-mark::after {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 50%;
+    .animation-frame img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1600 / 720;
+      object-fit: contain;
     }
 
-    .identity-mark::after {
-      width: 285px;
-      height: 285px;
+    .animation-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .identity-mark strong {
-      position: relative;
-      z-index: 1;
-      color: var(--white);
-      font-size: clamp(5rem, 12vw, 11rem);
-      letter-spacing: -0.1em;
+    .animation-caption strong {
+      color: var(--ink);
+      font-weight: 500;
+      letter-spacing: 0.06em;
     }
 
-    /*
-      COMPANY FACTS
-    */
+    /* COMPANY DETAILS STRIP */
 
-    .facts-section {
-      background: var(--cloud);
+    .details-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
     }
 
-    .facts-grid {
+    .details-inner {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .fact {
-      min-height: 290px;
-      padding: 60px 44px;
+    .detail {
+      padding: 28px 24px;
       border-right: 1px solid var(--line);
     }
 
-    .fact:last-child {
+    .detail:first-child {
+      padding-left: 0;
+    }
+
+    .detail:last-child {
       border-right: 0;
     }
 
-    .fact b {
+    .detail-label {
       display: block;
-      margin-bottom: 45px;
-      color: var(--blue);
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      letter-spacing: -0.06em;
-      line-height: 1;
-    }
-
-    .fact span {
-      display: block;
-      max-width: 230px;
-      color: var(--deep);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      line-height: 1.65;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    /*
-      AREAS OF SUPPORT
-    */
-
-    .standard {
-      padding: clamp(95px, 11vw, 150px) 0;
+    .detail-value {
+      font-size: 16px;
     }
 
-    .standard-head {
+    /* SHARED SECTION STYLES */
+
+    .section {
+      padding-block: 96px;
+    }
+
+    .section-heading {
       display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 60px;
-      margin-bottom: 70px;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 72px;
+      margin-bottom: 48px;
     }
 
-    .standard h2 {
-      max-width: 800px;
+    h2 {
       margin-bottom: 0;
-      color: var(--deep);
-      font-size: clamp(3rem, 6vw, 6.2rem);
-      font-weight: 750;
-      letter-spacing: -0.06em;
-      line-height: 0.94;
-    }
-
-    .principles {
-      border-top: 1px solid var(--line);
-    }
-
-    .principle {
-      display: grid;
-      grid-template-columns: 80px 0.7fr 1fr;
-      gap: 35px;
-      align-items: start;
-      padding: 42px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .principle-number {
-      color: var(--blue);
-      font-size: 0.75rem;
-      font-weight: 800;
-    }
-
-    .principle h3 {
-      margin: 0;
-      color: var(--deep);
-      font-size: clamp(1.7rem, 3vw, 2.8rem);
+      font-size: clamp(30px, 3.3vw, 46px);
+      font-weight: 400;
+      line-height: 1.17;
       letter-spacing: -0.04em;
     }
 
-    .principle p {
-      max-width: 580px;
-      margin: 0;
+    .section-description {
+      align-self: end;
+      max-width: 630px;
+      margin-bottom: 0;
       color: var(--muted);
+      font-size: 17px;
+      line-height: 1.85;
     }
 
-    /*
-      BUSINESS PROFILE
-    */
+    /* CAPABILITIES */
 
-    .profile {
-      padding: clamp(90px, 10vw, 130px) 0;
-      background: var(--ice);
-    }
-
-    .profile-grid {
+    .capabilities {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .profile h2 {
-      margin-bottom: 25px;
-      color: var(--deep);
-      font-size: clamp(2.8rem, 5vw, 5rem);
-      letter-spacing: -0.055em;
-      line-height: 0.95;
+    .capability {
+      padding: 36px 32px;
+      border-right: 1px solid var(--line);
     }
 
-    .profile-copy > p:last-child {
-      max-width: 500px;
+    .capability:first-child {
+      padding-left: 0;
+    }
+
+    .capability:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .capability-number {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--blue);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+    }
+
+    h3 {
+      margin-bottom: 14px;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+    }
+
+    .capability p {
+      margin-bottom: 0;
       color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
     }
 
-    .details {
+    /* EXPERIENCE */
+
+    .experience {
+      background: var(--background);
+      border-block: 1px solid var(--line);
+    }
+
+    .agency-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 48px;
       margin: 0;
-      border-top: 3px solid var(--blue);
+      padding: 0;
+      list-style: none;
     }
 
-    .detail {
+    .agency-list li {
+      padding: 25px 0;
+      border-top: 1px solid #cedce6;
+    }
+
+    .agency-name {
+      display: block;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .agency-category {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* COMPANY PROFILE */
+
+    .company-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
-      gap: 20px;
-      padding: 21px 0;
-      border-bottom: 1px solid #cddbe5;
+      gap: 72px;
     }
 
-    .detail dt {
+    .company-copy p {
       color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 17px;
+      line-height: 1.9;
     }
 
-    .detail dd {
-      margin: 0;
-      color: var(--deep);
-      font-weight: 800;
-      overflow-wrap: anywhere;
-    }
-
-    /*
-      CONTACT
-    */
-
-    .contact {
-      padding: clamp(90px, 11vw, 150px) 0;
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    .contact .eyebrow {
-      color: #c7deff;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 80px;
-      align-items: end;
-    }
-
-    .contact h2 {
-      max-width: 760px;
+    .company-copy p:last-child {
       margin-bottom: 0;
-      font-size: clamp(3.2rem, 7vw, 7rem);
-      letter-spacing: -0.065em;
-      line-height: 0.9;
     }
 
-    .contact-info {
-      display: grid;
-      gap: 13px;
-      padding-top: 28px;
-      border-top: 3px solid var(--white);
-    }
+    /* FOOTER */
 
-    .contact-info strong {
-      font-size: 1.08rem;
-    }
-
-    .contact-info a {
-      width: max-content;
-      color: var(--white);
-      font-weight: 700;
-      text-underline-offset: 5px;
-    }
-
-    .contact-info span {
-      color: #dbeaff;
-    }
-
-    /*
-      FOOTER
-    */
-
-    footer {
-      padding: 30px 0;
-      background: #081522;
-      color: #98aabb;
-      font-size: 0.75rem;
+    .footer {
+      padding-block: 36px;
+      background: #eaf2f7;
+      border-top: 1px solid var(--line);
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .footer-inner p {
+    .footer-name {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .footer-location {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .copyright {
       margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    :focus-visible {
-      outline: 3px solid #70b7ff;
-      outline-offset: 4px;
-    }
+    /* TABLET */
 
-    /*
-      TABLET
-    */
-
-    @media (max-width: 850px) {
+    @media (max-width: 960px) {
       .hero {
-        background:
-          linear-gradient(
-            165deg,
-            #ffffff 0 70%,
-            var(--ice) 70%
-          );
+        padding-top: 64px;
       }
 
-      .hero-grid,
-      .identity-grid,
-      .standard-head,
-      .profile-grid,
-      .contact-grid {
+      .hero-intro {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-description {
+        max-width: 660px;
+      }
+
+      .section-heading,
+      .company-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .capability {
+        padding-inline: 22px;
+      }
+
+      .navigation {
+        gap: 22px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 680px) {
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: 80px;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 48px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .js .menu-toggle {
+        display: block;
+      }
+
+      .navigation {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 14px;
+      }
+
+      .js .navigation {
+        display: none;
+      }
+
+      .js .navigation.is-open {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-intro {
+        padding-bottom: 34px;
+      }
+
+      h1 {
+        font-size: clamp(37px, 9.5vw, 56px);
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .animation-frame {
+        border-radius: 8px 8px 0 0;
+      }
+
+      .animation-caption {
+        padding: 12px 14px;
+        font-size: 12px;
+      }
+
+      .animation-caption span {
+        display: none;
+      }
+
+      .details-inner {
         grid-template-columns: 1fr;
       }
 
-      .hero-side {
-        max-width: 340px;
-      }
-
-      .identity-main {
-        padding: 90px 28px;
-      }
-
-      .identity-mark {
-        min-height: 380px;
-      }
-
-      .facts-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .fact {
-        min-height: 0;
+      .detail,
+      .detail:first-child {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px 0;
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
 
-      .principle {
-        grid-template-columns: 50px 1fr;
+      .detail:last-child {
+        border-bottom: 0;
       }
 
-      .principle p {
-        grid-column: 2;
+      .detail-label {
+        margin-bottom: 0;
       }
 
-      .profile-grid,
-      .contact-grid {
-        gap: 55px;
-      }
-    }
-
-    /*
-      MOBILE
-    */
-
-    @media (max-width: 590px) {
-      .wrap {
-        width: min(calc(100% - 34px), var(--page));
+      .detail-value {
+        font-size: 14px;
+        text-align: right;
       }
 
-      .header-inner {
-        min-height: 72px;
+      .section {
+        padding-block: 60px;
       }
 
-      .nav a:not(.contact-link) {
-        display: none;
+      .section-heading {
+        margin-bottom: 32px;
       }
 
-      .logo-window {
-        width: 32px;
-        height: 50px;
+      .capabilities {
+        grid-template-columns: 1fr;
       }
 
-      .logo-window img {
-        width: 108px;
+      .capability,
+      .capability:first-child,
+      .capability:last-child {
+        padding: 28px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
       }
 
-      .brand-name {
-        font-size: 0.72rem;
+      .capability:last-child {
+        border-bottom: 0;
       }
 
-      .nav .contact-link {
-        padding: 10px 13px;
-        font-size: 0.68rem;
+      .capability-number {
+        margin-bottom: 14px;
       }
 
-      .hero {
-        min-height: 720px;
-        padding: 88px 0 55px;
+      .agency-list {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: clamp(3.5rem, 17vw, 5.3rem);
+      .agency-name {
+        font-size: 17px;
       }
 
-      .identity h2,
-      .standard h2 {
-        font-size: clamp(2.8rem, 13vw, 4.2rem);
-      }
-
-      .identity-mark {
-        min-height: 310px;
-      }
-
-      .identity-mark::before {
-        width: 300px;
-        height: 300px;
-      }
-
-      .identity-mark::after {
-        width: 200px;
-        height: 200px;
-      }
-
-      .fact {
-        padding: 46px 24px;
-      }
-
-      .principle {
-        grid-template-columns: 35px 1fr;
-        gap: 18px;
+      .section-description,
+      .company-copy p {
+        font-size: 16px;
       }
 
       .footer-inner {
+        align-items: flex-start;
         flex-direction: column;
-        gap: 7px;
       }
     }
 
@@ -686,278 +655,278 @@
       html {
         scroll-behavior: auto;
       }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <a class="brand" href="#top" aria-label="EE Stock home">
-        <span class="logo-window" aria-hidden="true">
-          <img
-            src="ee-stock-logo.png"
-            alt=""
-          >
-        </span>
+  <header class="header">
+    <div class="container header-inner">
 
-        <span class="brand-name">
-          EE Stock LLC
+      <a class="brand" href="#home" aria-label="EE Stock LLC home">
+        <img
+          src="./logo.png"
+          alt=""
+          width="70"
+          height="62"
+          id="company-logo"
+        >
+
+        <span>
+          <span class="brand-name">EE STOCK LLC</span>
+          <span class="brand-subtitle">
+            Government &amp; Commercial Supply
+          </span>
         </span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        Menu
+      </button>
+
+      <nav
+        class="navigation"
+        id="main-navigation"
+        aria-label="Main navigation"
+      >
+        <a href="#capabilities">Capabilities</a>
+        <a href="#experience">Experience</a>
         <a href="#company">Company</a>
-        <a href="#support">Capabilities</a>
-        <a href="#profile">Profile</a>
-        <a class="contact-link" href="#contact">Contact</a>
       </nav>
 
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
+    <!-- INTRODUCTION AND UPDATED ANIMATION -->
 
-        <div>
-          <p class="eyebrow">
-            Government Contracting · California
-          </p>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container">
 
-          <h1 id="hero-title">
-            Commercial solutions for government
-            <em>requirements.</em>
-          </h1>
+        <div class="hero-intro">
+          <div>
+            <p class="eyebrow">
+              EE Stock LLC · Established 2021
+            </p>
 
-          <p class="hero-copy">
-            EE Stock LLC supports federal and California agencies
-            with commercial supplies, equipment, facilities and the
-            coordination required to deliver them successfully.
+            <h1 id="hero-title">
+              Commercial supply.<br>
+              <span>Government focus.</span>
+            </h1>
+          </div>
+
+          <p class="hero-description">
+            EE Stock LLC supports government agencies and commercial
+            organizations with supplies, equipment, and project
+            requirements.
           </p>
         </div>
 
-        <aside class="hero-side">
-          <p>
-            Commercial supply<br>
-            Facility requirements<br>
-            Contract support
-          </p>
-        </aside>
+        <div class="animation-frame">
+          <img
+            src="./ee-stock-commercial-logistics.svg?v=3"
+            alt="Commercial logistics scene with an EE Stock tractor-trailer traveling along a road and a forklift working at a distribution center."
+            width="1600"
+            height="720"
+            fetchpriority="high"
+          >
+
+          <div class="animation-caption">
+            <strong>Commercial requirements. In motion.</strong>
+            <span>EE Stock LLC</span>
+          </div>
+        </div>
 
       </div>
     </section>
 
+    <!-- COMPANY DETAILS -->
+
+    <div class="details-strip">
+      <div class="container details-inner">
+        <div class="detail">
+          <span class="detail-label">Established</span>
+          <span class="detail-value">2021</span>
+        </div>
+
+        <div class="detail">
+          <span class="detail-label">Based in</span>
+          <span class="detail-value">Moreno Valley, California</span>
+        </div>
+
+        <div class="detail">
+          <span class="detail-label">Business</span>
+          <span class="detail-value">Small Business</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAPABILITIES -->
+
     <section
-      class="identity"
+      class="section"
+      id="capabilities"
+      aria-labelledby="capabilities-title"
+    >
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2 id="capabilities-title">
+              Supply for the<br>work at hand.
+            </h2>
+          </div>
+
+          <p class="section-description">
+            From individual purchases to broader project requirements,
+            our work spans commercial products, equipment, and
+            facility-related needs.
+          </p>
+        </div>
+
+        <div class="capabilities">
+          <article class="capability">
+            <span class="capability-number">01</span>
+            <h3>Commercial Supplies</h3>
+            <p>
+              Commercial and industrial products, specialty containers,
+              protective cases, and materials specified for operational
+              requirements.
+            </p>
+          </article>
+
+          <article class="capability">
+            <span class="capability-number">02</span>
+            <h3>Equipment &amp; Infrastructure</h3>
+            <p>
+              Equipment, storage solutions, and modular facilities
+              supporting agency operations and project sites.
+            </p>
+          </article>
+
+          <article class="capability">
+            <span class="capability-number">03</span>
+            <h3>Project Requirements</h3>
+            <p>
+              Defined supply and service requirements supporting
+              facilities, ongoing operations, and project-specific
+              needs.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AGENCY EXPERIENCE -->
+
+    <section
+      class="section experience"
+      id="experience"
+      aria-labelledby="experience-title"
+    >
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2 id="experience-title">
+              Federal. State. Local.
+            </h2>
+          </div>
+
+          <p class="section-description">
+            EE Stock LLC’s contract experience includes work with the
+            following public agencies.
+          </p>
+        </div>
+
+        <ul class="agency-list">
+          <li>
+            <span class="agency-name">
+              Defense Logistics Agency
+            </span>
+            <span class="agency-category">
+              Federal government
+            </span>
+          </li>
+
+          <li>
+            <span class="agency-name">
+              U.S. Navy
+            </span>
+            <span class="agency-category">
+              Federal government
+            </span>
+          </li>
+
+          <li>
+            <span class="agency-name">
+              California Department of Parks and Recreation
+            </span>
+            <span class="agency-category">
+              State government
+            </span>
+          </li>
+
+          <li>
+            <span class="agency-name">
+              City of Huntington Beach
+            </span>
+            <span class="agency-category">
+              Local government
+            </span>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- COMPANY -->
+
+    <section
+      class="section"
       id="company"
       aria-labelledby="company-title"
     >
-      <div class="identity-grid">
-
-        <div class="identity-main">
-          <p class="eyebrow">
-            Who we are
-          </p>
-
-          <h2 id="company-title">
-            Government requirements, professionally managed.
-          </h2>
-
-          <p>
-            EE Stock LLC is an owner-led government contractor
-            providing a single point of responsibility for
-            product-based and facility-support requirements.
-            Every engagement is approached with careful review,
-            direct communication and disciplined follow-through.
-          </p>
-        </div>
-
-        <div class="identity-mark" aria-hidden="true">
-          <strong>EE</strong>
-        </div>
-
-      </div>
-    </section>
-
-    <section
-      class="facts-section"
-      aria-label="Company facts"
-    >
-      <div class="wrap facts-grid">
-
-        <div class="fact">
-          <b>2021</b>
-          <span>Company established</span>
-        </div>
-
-        <div class="fact">
-          <b>Federal</b>
-          <span>Registered government contractor</span>
-        </div>
-
-        <div class="fact">
-          <b>CA</b>
-          <span>Certified small business micro</span>
-        </div>
-
-      </div>
-    </section>
-
-    <section
-      class="standard"
-      id="support"
-      aria-labelledby="support-title"
-    >
-      <div class="wrap">
-
-        <div class="standard-head">
-          <p class="eyebrow">
-            Areas of support
-          </p>
-
-          <h2 id="support-title">
-            Built around the requirement.
-          </h2>
-        </div>
-
-        <div class="principles">
-
-          <article class="principle">
-            <span class="principle-number">01</span>
-
-            <h3>
-              Commercial Supply.
-            </h3>
-
-            <p>
-              Products, equipment and specialty items sourced in
-              accordance with the stated technical, delivery and
-              documentation requirements.
-            </p>
-          </article>
-
-          <article class="principle">
-            <span class="principle-number">02</span>
-
-            <h3>
-              Facilities &amp; Equipment.
-            </h3>
-
-            <p>
-              Support for storage, modular space, specialty
-              enclosures, material-handling equipment and related
-              commercial requirements.
-            </p>
-          </article>
-
-          <article class="principle">
-            <span class="principle-number">03</span>
-
-            <h3>
-              Contract Support.
-            </h3>
-
-            <p>
-              Coordination of schedules, transportation,
-              documentation and acceptance through the full period
-              of performance.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="profile"
-      id="profile"
-      aria-labelledby="profile-title"
-    >
-      <div class="wrap profile-grid">
-
-        <div class="profile-copy">
-          <p class="eyebrow">
-            Business profile
-          </p>
-
-          <h2 id="profile-title">
-            EE Stock LLC
-          </h2>
-
-          <p>
-            Owner-led and based in Moreno Valley, California.
-            Past and current performance includes work for DLA
-            Distribution, Portsmouth Naval Shipyard, the California
-            Department of Parks and Recreation, and the California
-            Department of Fish and Wildlife.
-          </p>
-        </div>
-
-        <dl class="details">
-
-          <div class="detail">
-            <dt>Location</dt>
-            <dd>Moreno Valley, California</dd>
-          </div>
-
-          <div class="detail">
-            <dt>UEI</dt>
-            <dd>KDL4YN8S42F7</dd>
-          </div>
-
-          <div class="detail">
-            <dt>CAGE</dt>
-            <dd>951A3</dd>
-          </div>
-
-          <div class="detail">
-            <dt>Certification</dt>
-            <dd>California SB Micro · 2026173</dd>
-          </div>
-
-          <div class="detail">
-            <dt>SAM</dt>
-            <dd>Active</dd>
-          </div>
-
-        </dl>
-      </div>
-    </section>
-
-    <section
-      class="contact"
-      id="contact"
-      aria-labelledby="contact-title"
-    >
-      <div class="wrap contact-grid">
+      <div class="container company-grid">
 
         <div>
-          <p class="eyebrow">
-            Contact
-          </p>
-
-          <h2 id="contact-title">
-            Start with a direct conversation.
+          <p class="eyebrow">The Company</p>
+          <h2 id="company-title">
+            EE Stock LLC
           </h2>
         </div>
 
-        <div class="contact-info">
-          <strong>Vincent Avalos</strong>
+        <div class="company-copy">
+          <p>
+            Established in 2021, EE Stock LLC is a California small
+            business based in Moreno Valley. The company serves public
+            agencies and commercial organizations through supply,
+            equipment, and project-related contracts.
+          </p>
 
-          <a href="mailto:vavalos@eestockllc.com">
-            vavalos@eestockllc.com
-          </a>
-
-          <a href="tel:+19512123306">
-            951-212-3306
-          </a>
-
-          <span>
-            Moreno Valley, California
-          </span>
+          <p>
+            Our experience includes specialty products, storage
+            containers, modular facilities, and equipment. Each
+            engagement is defined by its requirements, with attention
+            to specifications, delivery, and contract commitments.
+          </p>
         </div>
 
       </div>
@@ -965,23 +934,71 @@
 
   </main>
 
-  <footer>
-    <div class="wrap footer-inner">
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="footer-name">EE STOCK LLC</span>
+        <span class="footer-location">
+          Moreno Valley, California
+        </span>
+      </div>
 
-      <p>
-        © <span id="year">2026</span> EE Stock LLC
+      <p class="copyright">
+        &copy; <span id="year">2026</span> EE Stock LLC.
+        All rights reserved.
       </p>
-
-      <p>
-        California Small Business
-      </p>
-
     </div>
   </footer>
 
   <script>
+    document.documentElement.classList.add("js");
+
+    // Automatically maintain the copyright year.
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    // Mobile navigation.
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.getElementById("main-navigation");
+
+    function closeMenu() {
+      navigation.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "Menu";
+    }
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navigation.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "Close" : "Menu";
+    });
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        navigation.classList.contains("is-open")
+      ) {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    // Preserve the company name if the logo file is unavailable.
+    const logo = document.getElementById("company-logo");
+
+    function hideMissingLogo() {
+      logo.style.display = "none";
+    }
+
+    logo.addEventListener("error", hideMissingLogo);
+
+    if (logo.complete && logo.naturalWidth === 0) {
+      hideMissingLogo();
+    }
   </script>
 </body>
 </html>
