@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+<title id="title">EE Stock — commercial logistics in motion</title>
+<desc id="desc">A detailed semi-truck drives steadily along a foreground road. Its wheels remain on the roadway. Behind it, a forklift carries a pallet past a distribution center with four loading docks.</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#f9fcfe"/><stop offset="1" stop-color="#dfeaf0"/></linearGradient>
+ <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#f6f9fb"/><stop offset="1" stop-color="#cad8e1"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#6e92a6"/><stop offset=".45" stop-color="#a2c4d4"/><stop offset=".48" stop-color="#c8dce7"/><stop offset="1" stop-color="#7c9bad"/></linearGradient>
+ <linearGradient id="body" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".65" stop-color="#f2f6f8"/><stop offset="1" stop-color="#b9cbd7"/></linearGradient>
+ <linearGradient id="cab" x2="1" y2="1"><stop stop-color="#82b5cf"/><stop offset=".6" stop-color="#4c87a7"/><stop offset="1" stop-color="#326680"/></linearGradient>
+ <linearGradient id="metal" x2="1" y2="1"><stop stop-color="#ecf2f5"/><stop offset=".5" stop-color="#95aab8"/><stop offset="1" stop-color="#d8e4eb"/></linearGradient>
+ <linearGradient id="asphalt" x2="0" y2="1"><stop stop-color="#738691"/><stop offset="1" stop-color="#536976"/></linearGradient>
+ <pattern id="shutter" width="108" height="10" patternUnits="userSpaceOnUse"><rect width="108" height="10" fill="#aabcc7"/><path d="M0 9H108" stroke="#8ea4b1"/></pattern>
+ <pattern id="siding" width="16" height="150" patternUnits="userSpaceOnUse"><path d="M0 0V150" stroke="#8ba2b0" opacity=".18"/></pattern>
+ <pattern id="ribs" width="14" height="160" patternUnits="userSpaceOnUse"><path d="M0 0V160" stroke="#90a7b6" opacity=".17"/></pattern>
+ <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+ <g id="tree"><path d="M0 0V-58" stroke="#91a6ad" stroke-width="4"/><ellipse cy="-65" rx="23" ry="40" fill="#acbfc1"/><ellipse cx="-8" cy="-70" rx="14" ry="27" fill="#bacbcb"/></g>
+ <style>
+ .small{font:10px Arial,sans-serif;letter-spacing:2px;fill:#708794}
+ .truck-motion{animation:haul 18s linear infinite;animation-delay:-7.5s}
+ .spin{animation:roll 1.22s linear infinite}
+ .fork-motion{animation:transfer 12s ease-in-out infinite}
+ @keyframes haul{from{transform:translateX(-610px)}to{transform:translateX(1630px)}}
+ @keyframes roll{to{transform:rotate(360deg)}}
+ @keyframes transfer{0%,12%,100%{transform:translateX(0)}45%,60%{transform:translateX(120px)}}
+ @media(prefers-reduced-motion:reduce){.truck-motion{animation:none;transform:translateX(500px)}.spin,.fork-motion{animation:none}}
+ </style>
+</defs>
+<rect width="1600" height="720" fill="url(#sky)"/>
+<!-- Distant industrial skyline -->
+<g fill="#cbdbe4" opacity=".5"><path d="M0 363V291h65v-34h114v41h120v65ZM1190 366V276h117v-37h36v127ZM1370 367V315h58v-57h116v31h56v78Z"/>
+<path d="M1350 300V120h5v180M1260 155h260v5h-260M1352 121l161 34M1352 123l-90 33" fill="none" stroke="#aec8d6" stroke-width="3"/>
+<path d="M1490 160v99" stroke="#aec8d6" stroke-width="2"/></g>
+<path d="M0 399Q230 379 400 396T820 388T1200 393T1600 386V510H0Z" fill="#d2dfe4"/>
+<use href="#tree" x="128" y="463"/><use href="#tree" x="190" y="460"/><use href="#tree" x="1525" y="463"/>
+<!-- Facility: side wing and loading elevation -->
+<path d="M245 251 1150 251 1210 227 305 227Z" fill="#d6e2e9"/>
+<path d="M1150 251 1210 227V448l-60 16Z" fill="#aabbc6"/>
+<rect x="245" y="251" width="905" height="211" fill="url(#wall)"/>
+<rect x="245" y="310" width="905" height="149" fill="url(#siding)"/>
+<path d="M245 251h905" stroke="#698595" stroke-width="6"/>
+<path d="M245 313h905" stroke="#bfd0db" stroke-width="4"/>
+<rect x="290" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="342" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="394" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="446" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="498" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="550" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="602" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="654" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="706" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="758" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="810" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="862" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="914" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="966" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="1018" y="273" width="40" height="33" rx="1" fill="url(#glass)"/><rect x="1070" y="273" width="40" height="33" rx="1" fill="url(#glass)"/>
+<g fill="#a8bbc6"><path d="M380 227v-18h94v18ZM890 227v-18h118v18Z"/></g>
+<g fill="#526e7e"><rect x="391" y="214" width="72" height="4"/><rect x="901" y="214" width="94" height="4"/></g>
+<!-- Entry and bays -->
+<rect x="300" y="343" width="177" height="107" fill="#adc3d1"/>
+<path d="M308 351h160v91H308Z" fill="url(#glass)"/>
+<path d="M359 351v91M417 351v91" stroke="#dce6ec" stroke-width="4"/>
+<path d="M295 337h187" stroke="#536e7e" stroke-width="5"/>
+<rect x="370" y="427" width="5" height="23" fill="#e8f0f5"/>
+<g transform="translate(570 332)"><rect x="-7" y="-7" width="122" height="139" rx="3" fill="#97a8b2"/><rect width="108" height="124" fill="#3e5260"/><rect width="108" height="116" fill="url(#shutter)"/><rect x="-7" y="124" width="122" height="8" fill="#536976"/><path d="M-9 102v30M117 102v30" stroke="#253b48" stroke-width="9"/><text x="54" y="-20" text-anchor="middle" class="small">01</text><circle cx="119" cy="12" r="3" fill="#8fbcab"/></g><g transform="translate(717 332)"><rect x="-7" y="-7" width="122" height="139" rx="3" fill="#97a8b2"/><rect width="108" height="124" fill="#3e5260"/><rect width="108" height="37" fill="url(#shutter)"/><rect x="-7" y="124" width="122" height="8" fill="#536976"/><path d="M-9 102v30M117 102v30" stroke="#253b48" stroke-width="9"/><text x="54" y="-20" text-anchor="middle" class="small">02</text><circle cx="119" cy="12" r="3" fill="#8fbcab"/></g><g transform="translate(864 332)"><rect x="-7" y="-7" width="122" height="139" rx="3" fill="#97a8b2"/><rect width="108" height="124" fill="#3e5260"/><rect width="108" height="116" fill="url(#shutter)"/><rect x="-7" y="124" width="122" height="8" fill="#536976"/><path d="M-9 102v30M117 102v30" stroke="#253b48" stroke-width="9"/><text x="54" y="-20" text-anchor="middle" class="small">03</text><circle cx="119" cy="12" r="3" fill="#8fbcab"/></g><g transform="translate(1011 332)"><rect x="-7" y="-7" width="122" height="139" rx="3" fill="#97a8b2"/><rect width="108" height="124" fill="#3e5260"/><rect width="108" height="116" fill="url(#shutter)"/><rect x="-7" y="124" width="122" height="8" fill="#536976"/><path d="M-9 102v30M117 102v30" stroke="#253b48" stroke-width="9"/><text x="54" y="-20" text-anchor="middle" class="small">04</text><circle cx="119" cy="12" r="3" fill="#8fbcab"/></g>
+<path d="M242 465h968" stroke="#91a6b2" stroke-width="5"/>
+<!-- apron, curb and road -->
+<path d="M0 468H1600V511H0Z" fill="#c8d5dc"/>
+<g fill="none" stroke="#e7eef2" stroke-width="2" opacity=".9"><path d="M560 473l-15 25h117l11-25M706 473l-10 25h117l7-25M850 473l-6 25h117l3-25M997 473v25h117l-3-25"/></g>
+<path d="M0 506H1600V720H0Z" fill="url(#asphalt)"/>
+<path d="M0 509H1600" stroke="#eef4f7" stroke-width="5"/>
+<path d="M0 518H1600" stroke="#4e6574" stroke-width="2"/>
+<path d="M0 638H1600" stroke="#dce6eb" stroke-width="4" stroke-dasharray="62 42"/>
+<path d="M0 704H1600" stroke="#cad9e2" stroke-width="3"/>
+<!-- parked freight containers on apron -->
+<g transform="translate(1240 399)">
+<rect x="0" y="0" width="213" height="77" rx="2" fill="#7f9cad" stroke="#658293"/>
+<path d="M8 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M22 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M36 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M50 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M64 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M78 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M92 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M106 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M120 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M134 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M148 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M162 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M176 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M190 5v67" stroke="#afc5d1" stroke-width="2"/><path d="M204 5v67" stroke="#afc5d1" stroke-width="2"/>
+<path d="M0 75H213" stroke="#4a687b" stroke-width="4"/>
+</g>
+<!-- Forklift: all movement is relative to a fixed ground anchor -->
+<g transform="translate(695 437)"><g class="fork-motion">
+<ellipse cx="34" cy="43" rx="67" ry="4" fill="#5b7380" opacity=".25"/>
+<path d="M-20 14H22V35h-42Z" fill="#729db4" stroke="#486779" stroke-width="2"/>
+<path d="M-12 14V-26h38v61M-17-26h49" fill="none" stroke="#445f70" stroke-width="4"/>
+<path d="M8 13v-9h11" fill="none" stroke="#344d5b" stroke-width="4"/>
+<path d="M35-28v64h54" fill="none" stroke="#3d586b" stroke-width="4"/>
+<rect x="43" y="3" width="43" height="28" fill="#c7ba9e" stroke="#a59a83"/>
+<path d="M65 3v28" stroke="#e6dac3" stroke-width="5"/>
+<path d="M41 33h48" stroke="#9a8e75" stroke-width="4"/>
+<circle cx="-11" cy="34" r="9" fill="#2f4655"/><circle cx="21" cy="34" r="9" fill="#2f4655"/>
+<circle cx="-11" cy="34" r="4" fill="#a8bdc9"/><circle cx="21" cy="34" r="4" fill="#a8bdc9"/>
+</g></g>
+<!-- FIXED vertical anchor. Animated inner group controls X only.
+     Tire centers: 420+170=590. Radius:24. Contact y=614, on road 506..720. -->
+<g id="truck-ground-anchor" transform="translate(0 420)">
+<g class="truck-motion">
+<ellipse cx="285" cy="196" rx="276" ry="5" fill="#203745" opacity=".28" filter="url(#soft)"/>
+<!-- trailer skin, framing, ribs, side rails -->
+<rect x="7" y="0" width="375" height="144" rx="4" fill="url(#body)" stroke="#8098a7" stroke-width="1.5"/>
+<rect x="13" y="6" width="362" height="129" fill="url(#ribs)"/>
+<path d="M10 4H379M10 137H380" stroke="#e9f0f4" stroke-width="4"/>
+<path d="M7 144H383" stroke="#536e7e" stroke-width="5"/>
+<path d="M12 117H373" stroke="#5994b3" stroke-width="8"/>
+<path d="M12 125H373" stroke="#a8c8db" stroke-width="2"/>
+<text x="35" y="55" font-family="Arial,sans-serif" font-size="22" letter-spacing="5" fill="#466579">EE STOCK</text>
+<path d="M35 68H151" stroke="#afc2ce"/>
+<g fill="#dae5ec"><rect x="18" y="138" width="17" height="3"/><rect x="51" y="138" width="17" height="3"/><rect x="84" y="138" width="17" height="3"/><rect x="117" y="138" width="17" height="3"/><rect x="150" y="138" width="17" height="3"/><rect x="183" y="138" width="17" height="3"/><rect x="216" y="138" width="17" height="3"/><rect x="249" y="138" width="17" height="3"/><rect x="282" y="138" width="17" height="3"/><rect x="315" y="138" width="17" height="3"/><rect x="348" y="138" width="17" height="3"/></g>
+<path d="M17 148v17M329 148v18M332 165h13" stroke="#526d7f" stroke-width="4"/>
+<path d="M48 155H425" stroke="#354e5e" stroke-width="9"/>
+<path d="M48 160H150" stroke="#293f4e" stroke-width="3"/>
+<!-- fifth wheel, tank, steps -->
+<path d="M370 154h85" stroke="#2d4758" stroke-width="10"/>
+<rect x="378" y="150" width="60" height="24" rx="8" fill="url(#metal)" stroke="#78909e"/>
+<path d="M389 152v20M426 152v20" stroke="#6e8594" stroke-width="3"/>
+<!-- aerodynamic sleeper and cab -->
+<path d="M401 139V54q0-20 20-20h38q12 0 19 15l24 47 40 13q16 5 16 21v29h-18q-4-28-31-28t-33 28h-25v-20Z" fill="url(#cab)" stroke="#446b84" stroke-width="2"/>
+<path d="M408 53q0-12 12-12h33l7 11Z" fill="#a8cbdc"/>
+<path d="M448 60h24l20 35h-44Z" fill="#264759" stroke="#b2cddc" stroke-width="2"/>
+<path d="M452 62h17l14 26h-31Z" fill="url(#glass)"/>
+<path d="M441 53v82M445 104h45v31h-45" fill="none" stroke="#37627c" stroke-width="1.5"/>
+<path d="M451 112h9" stroke="#c6dce7" stroke-width="3"/>
+<path d="M491 77h10v26" fill="none" stroke="#344f60" stroke-width="3"/>
+<rect x="498" y="79" width="8" height="18" rx="2" fill="#7692a4"/>
+<path d="M444 140h27v6h-27M445 151h23v6h-23" fill="#c3d3df"/>
+<path d="M533 119h21v17h-21" fill="#3f5e70"/>
+<path d="M535 124h17M535 129h17" stroke="#a5b8c6"/>
+<rect x="548" y="137" width="10" height="7" rx="2" fill="#ffedc5"/>
+<path d="M534 157h29" stroke="#a6bac8" stroke-width="7"/>
+<path d="M407 43h6M432 37h6M457 43h6" stroke="#ecd3a0" stroke-width="3"/>
+<!-- wheels: rotating spokes inside stationary center anchors -->
+<g transform="translate(77 170)"><circle r="24" fill="#24333f"/><circle r="20" fill="#354651" stroke="#182b38" stroke-width="2"/><circle r="12" fill="url(#metal)"/><g class="spin"><path d="M0-10V10M-10 0H10M-7-7 7 7M-7 7 7-7" stroke="#687f8c" stroke-width="2"/></g><circle r="4" fill="#cedce3"/></g><g transform="translate(130 170)"><circle r="24" fill="#24333f"/><circle r="20" fill="#354651" stroke="#182b38" stroke-width="2"/><circle r="12" fill="url(#metal)"/><g class="spin"><path d="M0-10V10M-10 0H10M-7-7 7 7M-7 7 7-7" stroke="#687f8c" stroke-width="2"/></g><circle r="4" fill="#cedce3"/></g><g transform="translate(406 170)"><circle r="24" fill="#24333f"/><circle r="20" fill="#354651" stroke="#182b38" stroke-width="2"/><circle r="12" fill="url(#metal)"/><g class="spin"><path d="M0-10V10M-10 0H10M-7-7 7 7M-7 7 7-7" stroke="#687f8c" stroke-width="2"/></g><circle r="4" fill="#cedce3"/></g><g transform="translate(510 170)"><circle r="24" fill="#24333f"/><circle r="20" fill="#354651" stroke="#182b38" stroke-width="2"/><circle r="12" fill="url(#metal)"/><g class="spin"><path d="M0-10V10M-10 0H10M-7-7 7 7M-7 7 7-7" stroke="#687f8c" stroke-width="2"/></g><circle r="4" fill="#cedce3"/></g>
+</g></g>
+</svg>
