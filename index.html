@@ -1018,12 +1018,38 @@ function line(points,color,width=1){ctx.beginPath();let active=false;for(let p o
 function icon(type,x,y,angle=0,s=1){ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.scale(s,s);ctx.lineWidth=1.5;ctx.strokeStyle='#b8e5ff';ctx.fillStyle='#78caff';ctx.shadowColor='#328be0';ctx.shadowBlur=8;ctx.beginPath();if(type==='air'){ctx.moveTo(17,0);ctx.lineTo(2,-3);ctx.lineTo(-8,-15);ctx.lineTo(-12,-15);ctx.lineTo(-6,-3);ctx.lineTo(-15,-2);ctx.lineTo(-19,-7);ctx.lineTo(-21,-7);ctx.lineTo(-19,0);ctx.lineTo(-21,7);ctx.lineTo(-19,7);ctx.lineTo(-15,2);ctx.lineTo(-6,3);ctx.lineTo(-12,15);ctx.lineTo(-8,15);ctx.lineTo(2,3);ctx.closePath();ctx.fill()}else if(type==='ship'){ctx.moveTo(-26,3);ctx.lineTo(29,3);ctx.lineTo(19,13);ctx.lineTo(-20,13);ctx.closePath();ctx.fill();ctx.shadowBlur=0;for(let i=0;i<4;i++){ctx.strokeRect(-19+i*10,-7,8,8);ctx.strokeRect(-19+i*10,-17,8,8)}ctx.fillRect(13,-23,7,25);ctx.beginPath();ctx.moveTo(-30,19);ctx.quadraticCurveTo(-12,24,1,19);ctx.quadraticCurveTo(14,14,29,19);ctx.stroke()}else{ctx.strokeRect(-26,-15,35,22);ctx.strokeRect(10,-9,15,16);ctx.fillRect(14,-6,8,6);for(const x of [-18,2,20]){ctx.beginPath();ctx.arc(x,10,4,0,Math.PI*2);ctx.fill()}for(let i=-21;i<7;i+=6){ctx.beginPath();ctx.moveTo(i,-12);ctx.lineTo(i,4);ctx.stroke()}}ctx.restore()}
 function interp(a,b,u){const A=[Math.cos(a[2]*rad)*Math.cos(a[1]*rad),Math.cos(a[2]*rad)*Math.sin(a[1]*rad),Math.sin(a[2]*rad)],B=[Math.cos(b[2]*rad)*Math.cos(b[1]*rad),Math.cos(b[2]*rad)*Math.sin(b[1]*rad),Math.sin(b[2]*rad)];let d=Math.acos(Math.min(1,A.reduce((s,v,i)=>s+v*B[i],0))),q=Math.sin(d),v=A.map((x,i)=>(x*Math.sin((1-u)*d)+B[i]*Math.sin(u*d))/q);return [Math.atan2(v[1],v[0])/rad,Math.atan2(v[2],Math.hypot(v[0],v[1]))/rad]}
 function route(a,b,u,time,i){if(mode){const ll=interp(a,b,u),p=proj(...ll,time),lift=1+Math.sin(u*Math.PI)*.13;return [800+(p[0]-800)*lift,441+(p[1]-441)*lift,p[2]]}const A=proj(a[1],a[2],time),B=proj(b[1],b[2],time);return [A[0]+(B[0]-A[0])*u,A[1]+(B[1]-A[1])*u-Math.sin(u*Math.PI)*(30+Math.abs(A[0]-B[0])*.10),1]}
+
+// Ships use explicit offshore waypoints, independent of aircraft destinations.
+const seaLanes=[[[-65,35],[-48,40],[-30,44],[-15,46]],[[-130,28],[-155,30],[-178,32],[165,33],[150,32]],[[55,-15],[68,-20],[82,-22],[98,-20]],[[-33,-23],[-22,-30],[-5,-36],[12,-39]]];
+function seaPosition(lane,u){
+ const lengths=lane.slice(1).map((p,i)=>{const a=lane[i],dl=((p[0]-a[0]+540)%360)-180;return Math.hypot(dl*Math.cos((p[1]+a[1])*Math.PI/360),p[1]-a[1]);});
+ let remaining=u*lengths.reduce((s,v)=>s+v,0),i=0;
+ while(i<lengths.length-1&&remaining>lengths[i]){remaining-=lengths[i];i++;}
+ const a=lane[i],b=lane[i+1],f=remaining/lengths[i],dl=((b[0]-a[0]+540)%360)-180;
+ return [((a[0]+dl*f+540)%360)-180,a[1]+(b[1]-a[1])*f];
+}
+function seaPoint(lane,u,time){return proj(...seaPosition(lane,u),time);}
+function drawShips(time){
+ seaLanes.forEach((lane,i)=>{
+  const points=Array.from({length:161},(_,j)=>seaPoint(lane,j/160,time));
+  line(points,'#4aabc280',1.2);
+  for(let j=0;j<2;j++){
+   const u=(time/(32+i*4)+i*.23+j*.5)%1,p=seaPoint(lane,u,time);
+   // Hide at the horizon before the ship overlaps the back of the globe.
+   if(p[2]<.2)continue;
+   line(Array.from({length:18},(_,k)=>seaPoint(lane,Math.max(0,u-k*.004),time)),'#83d1ed99',1.8);
+   icon('ship',p[0],p[1],0,.48);
+  }
+ });
+}
+
 function draw(time){t=time;ctx.fillStyle='#031329';ctx.fillRect(0,0,W,H);let glow=ctx.createRadialGradient(800,420,60,800,420,780);glow.addColorStop(0,'#0b315b');glow.addColorStop(1,'#031329');ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
 ctx.strokeStyle='#123051';ctx.lineWidth=.6;for(let x=0;x<W;x+=64){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=0;y<H;y+=64){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
 if(mode){ctx.beginPath();ctx.arc(800,441,340,0,Math.PI*2);ctx.fillStyle='#061e3b';ctx.fill();ctx.strokeStyle='#3c7bad';ctx.shadowColor='#3b9fec';ctx.shadowBlur=28;ctx.stroke();ctx.shadowBlur=0}
 for(const poly of lands){for(const ring of poly){ctx.beginPath();let active=false;for(const ll of ring){let p=proj(...ll,time);if(p[2]<0){active=false;continue}if(active)ctx.lineTo(p[0],p[1]);else ctx.moveTo(p[0],p[1]);active=true}ctx.closePath();ctx.fillStyle='#143e63';ctx.fill();ctx.strokeStyle='#2b628a';ctx.lineWidth=.75;ctx.stroke()}}
 for(let lat=-60;lat<=60;lat+=30)line(Array.from({length:181},(_,i)=>proj(-180+i*2,lat,time)),'#32628655');for(let lon=-180;lon<180;lon+=30)line(Array.from({length:81},(_,i)=>proj(lon,-80+i*2,time)),'#32628655');
-connections.forEach(([ai,bi],i)=>{let a=ports[ai],b=ports[bi],points=Array.from({length:81},(_,j)=>route(a,b,j/80,time,i));line(points,'#3285bf66',1.2);for(let j=0;j<2;j++){let u=(time/(14+i%4*3)+i*.173+j*.5)%1,p=route(a,b,u,time,i),n=route(a,b,Math.min(.9999,u+.003),time,i);if(p[2]<.04)continue;let trail=Array.from({length:16},(_,k)=>route(a,b,Math.max(0,u-k*.004),time,i));line(trail,'#62c4ff88',2);icon(i%4===0?'ship':i===11||i===12?'truck':'air',p[0],p[1],i%4===0||i===11||i===12?0:Math.atan2(n[1]-p[1],n[0]-p[0]),i%4===0?.65:.7)}});
+connections.forEach(([ai,bi],i)=>{let a=ports[ai],b=ports[bi],points=Array.from({length:81},(_,j)=>route(a,b,j/80,time,i));line(points,'#3285bf66',1.2);for(let j=0;j<2;j++){let u=(time/(14+i%4*3)+i*.173+j*.5)%1,p=route(a,b,u,time,i),n=route(a,b,Math.min(.9999,u+.003),time,i);if(p[2]<.04)continue;let trail=Array.from({length:16},(_,k)=>route(a,b,Math.max(0,u-k*.004),time,i));line(trail,'#62c4ff88',2);icon('air',p[0],p[1],Math.atan2(n[1]-p[1],n[0]-p[0]),.65)}});
+drawShips(time);
 ports.forEach((p,i)=>{let a=proj(p[1],p[2],time);if(a[2]<.12)return;let r=5+((time*.45+i*.13)%1)*18;ctx.beginPath();ctx.arc(a[0],a[1],r,0,Math.PI*2);ctx.strokeStyle=`rgba(86,189,255,${(1-(r-5)/18)*.65})`;ctx.stroke();ctx.beginPath();ctx.arc(a[0],a[1],3,0,Math.PI*2);ctx.fillStyle='#c8eeff';ctx.fill();if(!mode||a[2]>.6){ctx.font='11px Arial';ctx.fillStyle='#aacde8';ctx.fillText(p[0],a[0]+9,a[1]+17)}});
 // Cargo handling and ground transport remain active beneath the global network.
 ctx.fillStyle='#06182e';ctx.fillRect(0,765,1600,135);line([[0,849,1],[1600,849,1]],'#426e92',2);ctx.setLineDash([22,22]);line([[0,880,1],[1600,880,1]],'#386187');ctx.setLineDash([]);
@@ -1045,7 +1071,5 @@ draw(0);sync();
 
 })();
 </script>
-</body>
-</html>
 </body>
 </html>
