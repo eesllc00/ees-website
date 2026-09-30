@@ -1,49 +1,368 @@
-<ul class="agency-list">
-  <li class="agency-card">
-    <div class="agency-logo">
-      <img
-        src="images/california-state-parks.png"
-        alt="California State Parks"
-      >
-    </div>
-    <span class="agency-name">
-      California Department of Parks and Recreation
-    </span>
-  </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <li class="agency-card">
-    <div class="agency-logo">
-      <img
-        src="images/navsea.png"
-        alt="NAVSEA"
-      >
-    </div>
-    <span class="agency-name">
-      Department of the Navy / NAVSEA
-    </span>
-  </li>
+  <title>EE Stock LLC | Government & Commercial Supply</title>
 
-  <li class="agency-card">
-    <div class="agency-logo">
-      <img
-        src="images/california-fish-wildlife.png"
-        alt="California Department of Fish and Wildlife"
-      >
-    </div>
-    <span class="agency-name">
-      California Department of Fish and Wildlife
-    </span>
-  </li>
+  <meta
+    name="description"
+    content="EE Stock LLC supports government agencies and commercial organizations with commercial supplies, equipment, and project requirements."
+  >
 
-  <li class="agency-card">
-    <div class="agency-logo">
-      <img
-        src="images/dla.png"
-        alt="Defense Logistics Agency"
+  <meta name="theme-color" content="#031329">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="globe-background" aria-hidden="true">
+    <canvas id="ees-globe"></canvas>
+  </div>
+
+  <button id="globe-motion" type="button" aria-pressed="true">
+    Pause animation
+  </button>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="EE Stock LLC home">
+        <img
+          src="images/ees-logo.png"
+          alt=""
+          width="70"
+          height="62"
+        >
+
+        <span>
+          <span class="brand-name">EE STOCK LLC</span>
+          <span class="brand-subtitle">
+            Government &amp; Commercial Supply
+          </span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
       >
+        Menu
+      </button>
+
+      <nav
+        class="navigation"
+        id="main-navigation"
+        aria-label="Main navigation"
+      >
+        <a href="#capabilities">Capabilities</a>
+        <a href="#experience">Experience</a>
+        <a href="#company">Company</a>
+        <a class="contact-link" href="#contact">Contact</a>
+      </nav>
     </div>
-    <span class="agency-name">
-      Defense Logistics Agency
-    </span>
-  </li>
-</ul>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-intro">
+          <div>
+            <p class="eyebrow">
+              EE Stock LLC · Established 2021
+            </p>
+
+            <h1 id="hero-title">
+              Commercial supply.<br>
+              <span>Government focus.</span>
+            </h1>
+          </div>
+
+          <div class="hero-contact">
+            <p class="hero-description">
+              EE Stock LLC supports government agencies and commercial
+              organizations with supplies, equipment, and project
+              requirements.
+            </p>
+
+            <a
+              class="contact-button"
+              href="mailto:vavalos@eestockllc.com"
+            >
+              Discuss a requirement
+            </a>
+          </div>
+        </div>
+
+        <div class="animation-frame">
+          <div class="globe-window" aria-hidden="true"></div>
+
+          <div class="animation-caption">
+            <strong>Commercial requirements. In motion.</strong>
+            <span>EE Stock LLC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="details-strip">
+      <div class="container details-inner">
+        <div class="detail">
+          <span class="detail-label">Established</span>
+          <span class="detail-value">2021</span>
+        </div>
+
+        <div class="detail">
+          <span class="detail-label">Based in</span>
+          <span class="detail-value">Moreno Valley, California</span>
+        </div>
+
+        <div class="detail">
+          <span class="detail-label">Business</span>
+          <span class="detail-value">Small Business</span>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="section"
+      id="capabilities"
+      aria-labelledby="capabilities-title"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+
+            <h2 id="capabilities-title">
+              Supply for the<br>work at hand.
+            </h2>
+          </div>
+
+          <p class="section-description">
+            From individual purchases to broader project requirements,
+            our work spans commercial products, equipment, and
+            facility-related needs.
+          </p>
+        </div>
+
+        <div class="capabilities">
+          <article class="capability">
+            <span class="capability-number">01</span>
+            <h3>Commercial Supplies</h3>
+
+            <p>
+              Commercial and industrial products, specialty containers,
+              protective cases, and materials specified for operational
+              requirements.
+            </p>
+          </article>
+
+          <article class="capability">
+            <span class="capability-number">02</span>
+            <h3>Equipment &amp; Infrastructure</h3>
+
+            <p>
+              Equipment, storage solutions, and modular facilities
+              supporting agency operations and project sites.
+            </p>
+          </article>
+
+          <article class="capability">
+            <span class="capability-number">03</span>
+            <h3>Project Requirements</h3>
+
+            <p>
+              Defined supply and service requirements supporting
+              facilities, ongoing operations, and project-specific
+              needs.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section experience"
+      id="experience"
+      aria-labelledby="experience-title"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Experience</p>
+
+            <h2 id="experience-title">
+              Previous contract experience.
+            </h2>
+          </div>
+        </div>
+
+        <ul class="agency-list">
+          <li class="agency-card">
+            <div class="agency-logo">
+              <img
+                src="images/california-state-parks.png"
+                alt="California Department of Parks and Recreation logo"
+                width="122"
+                height="123"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <span class="agency-name">
+              California Department of Parks and Recreation
+            </span>
+          </li>
+
+          <li class="agency-card">
+            <div class="agency-logo">
+              <img
+                src="images/navsea.png"
+                alt="Department of the Navy / NAVSEA logo"
+                width="1024"
+                height="466"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <span class="agency-name">
+              Department of the Navy / NAVSEA
+            </span>
+          </li>
+
+          <li class="agency-card">
+            <div class="agency-logo">
+              <img
+                src="images/california-fish-wildlife.png"
+                alt="California Department of Fish and Wildlife logo"
+                width="122"
+                height="160"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <span class="agency-name">
+              California Department of Fish and Wildlife
+            </span>
+          </li>
+
+          <li class="agency-card">
+            <div class="agency-logo">
+              <img
+                src="images/dla.png"
+                alt="Defense Logistics Agency logo"
+                width="380"
+                height="471"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <span class="agency-name">
+              Defense Logistics Agency
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      id="company"
+      aria-labelledby="company-title"
+    >
+      <div class="container company-grid">
+        <div>
+          <p class="eyebrow">The Company</p>
+          <h2 id="company-title">EE Stock LLC</h2>
+        </div>
+
+        <div class="company-copy">
+          <p>
+            Established in 2021, EE Stock LLC is a California small
+            business based in Moreno Valley. The company serves public
+            agencies and commercial organizations through supply,
+            equipment, and project-related contracts.
+          </p>
+
+          <p>
+            Our experience includes specialty products, storage
+            containers, modular facilities, and equipment. Each
+            engagement is defined by its requirements, with attention
+            to specifications, delivery, and contract commitments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section contact-section"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Discuss your requirement.</h2>
+        </div>
+
+        <div class="contact-copy">
+          <p>
+            For supply, equipment, and project inquiries,
+            contact EE Stock LLC directly.
+          </p>
+
+          <a
+            class="contact-email"
+            href="mailto:vavalos@eestockllc.com"
+          >
+            vavalos@eestockllc.com
+          </a>
+
+          <a
+            class="contact-button"
+            href="mailto:vavalos@eestockllc.com"
+          >
+            Email EE Stock
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="footer-name">EE STOCK LLC</span>
+
+        <span class="footer-location">
+          Moreno Valley, California
+        </span>
+      </div>
+
+      <p class="copyright">
+        &copy; <span id="year">2026</span> EE Stock LLC.
+        All rights reserved.<br>
+
+        <small>
+          Route map &copy;
+          <a href="https://www.openstreetmap.org/copyright">
+            OpenStreetMap contributors
+          </a>
+        </small>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
